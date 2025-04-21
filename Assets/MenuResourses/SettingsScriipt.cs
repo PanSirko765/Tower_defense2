@@ -12,10 +12,21 @@ public class SettingsScriipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyUp(KeyCode.F5))
+        {
+            OnOffSettings();
+        }
     }
     public void OnOffSettings()
     {
         gameObject.SetActive(!gameObject.activeSelf);
+        if (gameObject.activeSelf == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 }
