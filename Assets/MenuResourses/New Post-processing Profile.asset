@@ -1383,7 +1383,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 40
+    value: 57.9
   threshold:
     overrideState: 1
     value: 1
@@ -1398,7 +1398,7 @@ MonoBehaviour:
     value: 10
   anamorphicRatio:
     overrideState: 1
-    value: -0.01
+    value: 0.21
   color:
     overrideState: 1
     value: {r: 0.79622644, g: 0.41593343, b: 0.23285857, a: 1}
