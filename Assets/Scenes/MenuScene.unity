@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: b6a3f8bca2c865243929bac258c89b96, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 40f6df0d6473c63449dbd29110e6b50b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2264,7 +2264,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.54283375, g: 0.8972185, b: 0.90188676, a: 1}
-  m_Intensity: 1.4
+  m_Intensity: 0.8
   m_Range: 39721.4
   m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
@@ -2361,7 +2361,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.54283375, g: 0.8972185, b: 0.90188676, a: 1}
-  m_Intensity: 1.4
+  m_Intensity: 0.8
   m_Range: 39721.4
   m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
@@ -6514,7 +6514,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7054601, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 3.8
   m_Range: 140
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7437,7 +7437,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7660377, g: 0.48035204, b: 0.079494394, a: 1}
-  m_Intensity: 7
+  m_Intensity: 5.5
   m_Range: 27
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7955,7 +7955,7 @@ SceneRoots:
   - {fileID: 1885777475}
   - {fileID: 1278080511}
   - {fileID: 1539076179}
-  - {fileID: 1540251530}
   - {fileID: 1838526412}
+  - {fileID: 1540251530}
   - {fileID: 1059937628}
   - {fileID: 2034613668}
