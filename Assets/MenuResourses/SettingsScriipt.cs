@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
+using UnityEditor.Rendering.PostProcessing;
 
 
 public class SettingsScriipt : MonoBehaviour
@@ -10,8 +11,14 @@ public class SettingsScriipt : MonoBehaviour
     public GameObject gameObject;
     public GameObject MainPanel;
     public GameObject VolumePanel;
+    public GameObject GrSetPanel;
     public Slider sliderVolume;
     public float volumeData;
+    public GameObject gameObjectCamera;
+    public OnOffPostProcessing postProcessing;
+    public Skybox skybox;
+    
+    public Component component;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,8 +37,19 @@ public class SettingsScriipt : MonoBehaviour
         {
             volumeData = sliderVolume.value;
         }
+        if(GrSetPanel.activeSelf == true)
+        {
+            if(postProcessing.postProcessing == 1)
+            {
+                
+            }
+            if(postProcessing.postProcessing == 0)
+            {
+                
+            }
+        }
     }
-
+    
     public void OnOffSettings()
     {
         gameObject.SetActive(!gameObject.activeSelf);
@@ -56,7 +74,13 @@ public class SettingsScriipt : MonoBehaviour
     public void GoToMainPanel()
     {
         VolumePanel.SetActive(false);
+        GrSetPanel.SetActive(false);
         MainPanel.SetActive(true);
+    }
+    public void GoToGrSet()
+    {
+        MainPanel.SetActive(false);
+        GrSetPanel.SetActive(true);
     }
 
     public void ExitGame()
