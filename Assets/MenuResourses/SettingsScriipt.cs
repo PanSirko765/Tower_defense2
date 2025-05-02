@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
 using UnityEditor.Rendering.PostProcessing;
+using UnityEngine.Rendering.PostProcessing;
 
 
 public class SettingsScriipt : MonoBehaviour
@@ -16,14 +17,18 @@ public class SettingsScriipt : MonoBehaviour
     public float volumeData;
     public GameObject gameObjectCamera;
     public OnOffPostProcessing postProcessing;
-    public Skybox skybox;
+    public Light spot;
+    public Light fire;
+
+    public PostProcessVolume volume;
     
-    public Component component;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Material skyMat;
+    
     void Start()
     {
         sliderVolume.maxValue = 1f;
         sliderVolume.minValue = 0f;
+        
     }
 
     // Update is called once per frame
@@ -41,11 +46,21 @@ public class SettingsScriipt : MonoBehaviour
         {
             if(postProcessing.postProcessing == 1)
             {
-                
+                RenderSettings.skybox = skyMat;
+                volume.enabled = true;
+                skyMat.SetFloat("_Exposure", 0.7f);
+                DynamicGI.UpdateEnvironment();
+                fire.intensity = 6;
+                spot.intensity = 1;
             }
             if(postProcessing.postProcessing == 0)
             {
-                
+                RenderSettings.skybox = skyMat;
+                volume.enabled = false;
+                skyMat.SetFloat("_Exposure", 0.4f);
+                DynamicGI.UpdateEnvironment();
+                fire.intensity = 4;
+                spot.intensity = 0.6f;
             }
         }
     }
