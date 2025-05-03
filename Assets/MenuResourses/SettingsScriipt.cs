@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
 using UnityEditor.Rendering.PostProcessing;
 using UnityEngine.Rendering.PostProcessing;
+using Unity.VisualScripting;
 
 
 public class SettingsScriipt : MonoBehaviour
@@ -22,13 +23,15 @@ public class SettingsScriipt : MonoBehaviour
 
     public PostProcessVolume volume;
     
+    public Bloom bloom;
+
     public Material skyMat;
     
     void Start()
     {
         sliderVolume.maxValue = 1f;
         sliderVolume.minValue = 0f;
-        
+        volume.profile.TryGetSettings(out bloom);
     }
 
     // Update is called once per frame
@@ -38,14 +41,16 @@ public class SettingsScriipt : MonoBehaviour
         {
             OnOffSettings();
         }
-        if(volumeData != sliderVolume.value)
-        {
-            volumeData = sliderVolume.value;
-        }
+        
         if(GrSetPanel.activeSelf == true)
         {
+
             if(postProcessing.postProcessing == 1)
             {
+                bloom.intensity.value = postProcessing.sliderBloom.value;
+                bloom.anamorphicRatio.value = postProcessing.sliderRatio.value;
+                
+
                 RenderSettings.skybox = skyMat;
                 volume.enabled = true;
                 skyMat.SetFloat("_Exposure", 0.7f);

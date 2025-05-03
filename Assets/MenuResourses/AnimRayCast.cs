@@ -1,24 +1,21 @@
 using UnityEditor.Rendering.PostProcessing;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class AnimRayCast : MonoBehaviour
+public class AnimRayCast : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Animation animation;
     public Camera camera;
-    
-    // Update is called once per frame
-    void Update()
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            
-            
-                //animation.Play("ButtonAnim");
-                Debug.Log(hit.transform.name);
-             
-            
-        }
+        animation.Play("ButtonAnim 1");
+        
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        animation.Play("ButtonAnim");
+        
     }
 }
