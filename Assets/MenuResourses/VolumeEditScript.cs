@@ -1,15 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VolumeEditScript : MonoBehaviour
 {
-    public SettingsScriipt scriipt;
+    public Slider slider;
     public AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-
-    // Update is called once per frame
-    void FixedUpdate()
+    void Start()
     {
-        audioSource.volume = audioSource.volume * scriipt.volumeData;
+        slider.onValueChanged.AddListener(SetVolume);
     }
+
+    public void SetVolume(float value)
+    {
+        audioSource.volume = audioSource.volume * value;
+    }
+
+
+    
 }
