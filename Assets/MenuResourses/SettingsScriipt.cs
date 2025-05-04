@@ -48,7 +48,7 @@ public class SettingsScriipt : MonoBehaviour
             if(postProcessing.postProcessing == 1)
             {
                 bloom.intensity.value = postProcessing.sliderBloom.value;
-                bloom.anamorphicRatio.value = postProcessing.sliderRatio.value;
+                
                 
 
                 RenderSettings.skybox = skyMat;
@@ -73,14 +73,14 @@ public class SettingsScriipt : MonoBehaviour
     public void OnOffSettings()
     {
         gameObject.SetActive(!gameObject.activeSelf);
-        if (gameObject.activeSelf == true)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
-        }
+        //if (gameObject.activeSelf == true)
+        //{
+        //    //Time.timeScale = 0;
+        //}
+        //else
+        //{
+        //    //Time.timeScale = 1.0f;
+       //}
     }
     public void SettingsGraphicsOnOff()
     {

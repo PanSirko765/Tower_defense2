@@ -4,18 +4,18 @@ using UnityEngine.EventSystems;
 
 public class AnimRayCast : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Animation animation;
-    public Camera camera;
+    public Animator animator;
+    
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        animation.Play("ButtonAnim 1");
+        animator.SetBool("Down", true);
         
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        animation.Play("ButtonAnim");
-        
+        animator.SetBool("Down", false);
+
     }
 }

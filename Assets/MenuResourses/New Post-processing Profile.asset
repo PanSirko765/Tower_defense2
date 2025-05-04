@@ -82,10 +82,10 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 1
-    value: 8
+    value: 10
   anamorphicRatio:
     overrideState: 1
-    value: 1
+    value: 0
   color:
     overrideState: 1
     value: {r: 0.81886786, g: 0.29362756, b: 0.12205757, a: 1}
