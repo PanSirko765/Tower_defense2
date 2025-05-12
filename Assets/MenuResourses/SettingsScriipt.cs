@@ -41,6 +41,10 @@ public class SettingsScriipt : MonoBehaviour
         {
             OnOffSettings();
         }
+        if (Input.GetKeyUp(KeyCode.F4))
+        {
+            SelectSkin();
+        }    
         
         if(GrSetPanel.activeSelf == true)
         {
@@ -73,14 +77,13 @@ public class SettingsScriipt : MonoBehaviour
     public void OnOffSettings()
     {
         gameObject.SetActive(!gameObject.activeSelf);
-        //if (gameObject.activeSelf == true)
-        //{
-        //    //Time.timeScale = 0;
-        //}
-        //else
-        //{
-        //    //Time.timeScale = 1.0f;
-       //}
+          
+       
+    }
+
+    public void SelectSkin()
+    {
+        SceneManager.LoadScene(1);
     }
     public void SettingsGraphicsOnOff()
     {
