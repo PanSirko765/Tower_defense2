@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ItemsScript : MonoBehaviour
 {
@@ -17,51 +19,79 @@ public class ItemsScript : MonoBehaviour
 
 public class CommonArmor
 {
-    public bool have;
-    public bool select;
-    public int hpPlus;
+    public int have = 1;
+    public int select = PlayerPrefs.GetInt("SelectCommonArmor", 1);
+    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 50);
     public int cost;
 }
 
-public class IronArmor : CommonArmor
+public class IronArmor 
 {
-    public float slow;
+    public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
+    public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
+    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 250);
+    public float slow = 0.4f;
+    public int cost = 100;
 }
 
-public class FireArmor : CommonArmor
+public class FireArmor 
 {
-    public float fire;
+    public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
+    public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
+    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 200);
+    public float fire = 55;
+    public int cost = 130;
 }
 
-public class IceArmor : CommonArmor
+public class IceArmor 
 {
-    public float slowsec;
+    public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
+    public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
+    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 270);
+    public float slowsec = 1.5f;
+    public int cost = 200;
 }
 
 public class CommonSword
 {
-    public bool have;
-    public bool select;
+    public int have = 1;
+    public int select = PlayerPrefs.GetInt("SelectCommonSword", 1);
     public int cost;
-    public float damage;
+    public float damage = 500;
 }
 
 public class VampirSword : CommonSword
 {
-    public float hpRet;
+    public int have = PlayerPrefs.GetInt("HaveVamSword", 0);
+    public int select = PlayerPrefs.GetInt("SelectVampirSword", 0);
+    public int cost = 200;
+    public float damage = 410;
+    public float hpRet = 0.08f;
 }
 
 public class SpeedSword : CommonSword
 {
-    public float speedBoost;
+    public int have = PlayerPrefs.GetInt("HaveVamSword", 0);
+    public int select = PlayerPrefs.GetInt("SelectVampirSword", 0);
+    public int cost = 470;
+    public float damage = 450;
+    public float speedBoost = 1.4f;
 }
 
 public class ShieldSword : CommonSword
 {
-    public float Shield;
+    public int have = PlayerPrefs.GetInt("HaveVamSword", 0);
+    public int select = PlayerPrefs.GetInt("SelectVampirSword", 0);
+    public int cost = 600;
+    public float damage = 480;
+    public float Shield = 0.2f;
 }
 
 public class UpSword : CommonSword
 {
-    public float plusDamage;
+    public int have = PlayerPrefs.GetInt("HaveVamSword", 0);
+    public int select = PlayerPrefs.GetInt("SelectVampirSword", 0);
+    public int cost = 870;
+    public float damage = 500;
+    public float plusDamage = 1.04f;
 }
