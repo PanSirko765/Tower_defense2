@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f200c0ae8c53e98418811ecf30c15ffd
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2098
+  packageName: 'Satellite Dish '
+  packageVersion: 1.0
+  assetPath: Assets/Satellite Dish/info.txt
+  uploadId: 25602
