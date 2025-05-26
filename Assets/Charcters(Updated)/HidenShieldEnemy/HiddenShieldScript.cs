@@ -30,7 +30,7 @@ public class HiddenShieldScript : MonoBehaviour
         {
             agent.speed = 30;
         }
-        agent.speed += 0.01f;
+        agent.speed += 0.001f;
 
     }
 }
