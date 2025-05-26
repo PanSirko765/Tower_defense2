@@ -2,27 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ItemsScript : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
 
-public class CommonArmor
+
+public class CommonArmor : MonoBehaviour
 {
     public int have = 1;
-    public int select = PlayerPrefs.GetInt("SelectCommonArmor", 1);
-    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 50);
+    public int select;
+    public float hpPlus ;
     public int cost;
+    public float updateCost;
+    private void Start()
+    {
+        select = PlayerPrefs.GetInt("SelectCommonArmor", 1);
+        hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 50);
+        updateCost = PlayerPrefs.GetInt("updateCostCommonArmor", 50);
+    }
+
 }
 
 public class IronArmor 
