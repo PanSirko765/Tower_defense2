@@ -25,4 +25,9 @@ public class CommonArmorScript : MonoBehaviour
         text.text = "+" + common.hpPlus + "hp";
         update.text = "Прокачати за" + common.updateCost;
     }
+
+    public void Select()
+    {
+        
+    }
 }

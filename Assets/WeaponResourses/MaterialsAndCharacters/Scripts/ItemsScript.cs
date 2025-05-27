@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 
 
@@ -11,11 +12,12 @@ public class CommonArmor : MonoBehaviour
     public float hpPlus ;
     public int cost;
     public float updateCost;
+    
     private void Start()
     {
         select = PlayerPrefs.GetInt("SelectCommonArmor", 1);
-        hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 50);
-        updateCost = PlayerPrefs.GetInt("updateCostCommonArmor", 50);
+        hpPlus = PlayerPrefs.GetFloat("hpCommonArmor", 50);
+        updateCost = PlayerPrefs.GetFloat("updateCostCommonArmor", 50);
     }
 
 }
@@ -24,9 +26,11 @@ public class IronArmor
 {
     public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
     public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
-    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 250);
+    public float hpPlus = PlayerPrefs.GetFloat("hpIronArmor", 250);
     public float slow = 0.4f;
-    public int cost = 100;
+    public float cost = 100;
+    public float updateCost = PlayerPrefs.GetFloat("updateCostIronArmor", 60);
+    public float updateSuperCost = PlayerPrefs.GetFloat("SupCostIronArmor", 160);
 }
 
 public class FireArmor 
