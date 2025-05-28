@@ -26,8 +26,5 @@ public class CommonArmorScript : MonoBehaviour
         update.text = "Прокачати за" + common.updateCost;
     }
 
-    public void Select()
-    {
-        
-    }
+    
 }
