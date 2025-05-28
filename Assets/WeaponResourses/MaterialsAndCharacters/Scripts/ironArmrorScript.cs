@@ -8,13 +8,30 @@ public class ironArmrorScript : MonoBehaviour
     public Text text;
     public Text update;
     public GameObject @object;
+    public Text LevelText;
+    public GameObject updateButton;
+    public Text textcostupdate;
     private void Start()
     {
         update.text = "Прокачати за" + armor.updateCost;
         text.text = "+" + armor.hpPlus + "hp";
+        LevelText.text = armor.levelSuper + "level";
+        textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
         IfHave();
+        OnLevel();
     }
 
+    public void OnLevel()
+    {
+        if(armor.levelSuper >= 5)
+        {
+            updateButton.SetActive(false);
+        }
+        else
+        {
+            updateButton.SetActive(true);
+        }
+    }
     public void IfHave()
     {
         if(armor.have == 0)
@@ -35,7 +52,7 @@ public class ironArmrorScript : MonoBehaviour
     }
     public void Upgrade()
     {
-        armor.hpPlus = armor.hpPlus * 1.2f;
+        armor.hpPlus *= 1.2f;
         Math.Round(armor.hpPlus);
         PlayerPrefs.SetFloat("hpIronArmor", armor.hpPlus);
         armor.updateCost *= 1.3f;
@@ -45,5 +62,53 @@ public class ironArmrorScript : MonoBehaviour
         update.text = "Прокачати за" + armor.updateCost;
     }
 
-   
+    public void UpdradeSuper()
+    {
+        if(armor.levelSuper < 5)
+        {
+            if(armor.levelSuper == 1)
+            {
+                armor.levelSuper = 2;
+                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                armor.slow = 0.3f;
+                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                LevelText.text = armor.levelSuper + "level";
+                armor.updateSuperCost *= 2;
+                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+            }
+            else if(armor.levelSuper == 2)
+            {
+                armor.levelSuper = 3;
+                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                armor.slow = 0.2f;
+                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                LevelText.text = armor.levelSuper + "level";
+                armor.updateSuperCost *= 2;
+                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+            }
+            else if( armor.levelSuper == 3)
+            {
+                armor.levelSuper = 4;
+                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                armor.slow = 0.1f;
+                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                LevelText.text = armor.levelSuper + "level";
+                armor.updateSuperCost *= 2;
+                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+            }
+            else
+            {
+                armor.levelSuper = 5;
+                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                armor.slow = 0.08f;
+                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                LevelText.text = armor.levelSuper + "level";
+                OnLevel();
+                
+            }
+        }
+    }
 }
