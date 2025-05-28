@@ -33,14 +33,7 @@ public class FireArmor
     public int cost = 130;
 }
 
-public class IceArmor 
-{
-    public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
-    public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
-    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 270);
-    public float slowsec = 1.5f;
-    public int cost = 200;
-}
+
 
 public class CommonSword
 {
