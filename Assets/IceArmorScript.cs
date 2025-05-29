@@ -5,12 +5,16 @@ using UnityEngine.UI;
 public class IceArmrorScript : MonoBehaviour
 {
     public IceArmor armor;
+    public IronArmor notarmor;
+    public FireArmor notarmor2;
+    public CommonArmor notarmor3;
     public Text text;
     public Text update;
     public GameObject @object;
     public Text LevelText;
     public GameObject updateButton;
     public Text textcostupdate;
+    public SelectItemScript itemScript;
     private void Start()
     {
         update.text = "Прокачати за" + armor.updateCost;
@@ -44,6 +48,11 @@ public class IceArmrorScript : MonoBehaviour
         }
     }
 
+    public void Select()
+    {
+        itemScript.Select(2);
+
+    }  
     public void BuyThis()
     {
         @object.SetActive(false);
@@ -61,7 +70,7 @@ public class IceArmrorScript : MonoBehaviour
         text.text = "+" + armor.hpPlus + "hp";
         update.text = "Прокачати за" + armor.updateCost;
     }
-
+    
     public void UpdradeSuper()
     {
         if (armor.levelSuper < 5)

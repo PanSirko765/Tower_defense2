@@ -11,6 +11,7 @@ public class ironArmrorScript : MonoBehaviour
     public Text LevelText;
     public GameObject updateButton;
     public Text textcostupdate;
+    public SelectItemScript itemScript;
     private void Start()
     {
         update.text = "Прокачати за" + armor.updateCost;
@@ -61,7 +62,10 @@ public class ironArmrorScript : MonoBehaviour
         text.text = "+" + armor.hpPlus + "hp";
         update.text = "Прокачати за" + armor.updateCost;
     }
-
+    public void Select()
+    {
+        itemScript.Select(1);
+    }
     public void UpdradeSuper()
     {
         if(armor.levelSuper < 5)
