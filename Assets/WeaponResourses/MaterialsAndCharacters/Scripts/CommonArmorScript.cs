@@ -7,6 +7,7 @@ public class CommonArmorScript : MonoBehaviour
     public CommonArmor common;
     [SerializeField] private Text text;
     [SerializeField] private Text update;
+    [SerializeField] private SelectItemScript delete;
     void Start()
     {
         
@@ -25,6 +26,9 @@ public class CommonArmorScript : MonoBehaviour
         text.text = "+" + common.hpPlus + "hp";
         update.text = "Прокачати за" + common.updateCost;
     }
-
+    public void Select()
+    {
+        delete.Select(0);
+    }
     
 }

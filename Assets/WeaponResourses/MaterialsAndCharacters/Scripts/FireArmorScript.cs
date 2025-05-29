@@ -11,6 +11,7 @@ public class FireArmrorScript : MonoBehaviour
     public Text LevelText;
     public GameObject updateButton;
     public Text textcostupdate;
+    public SelectItemScript itemScript;
     private void Start()
     {
         update.text = "Прокачати за" + armor.updateCost;
@@ -43,7 +44,10 @@ public class FireArmrorScript : MonoBehaviour
             @object.SetActive(false);
         }
     }
-
+    public void Select()
+    {
+        itemScript.Select(3);
+    }
     public void BuyThis()
     {
         @object.SetActive(false);
