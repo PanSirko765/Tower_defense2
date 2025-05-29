@@ -10,7 +10,7 @@ public class IronArmor : MonoBehaviour
     public float cost = 100;
     public float updateCost;
     public float updateSuperCost;
-    private void Start()
+    private void Awake()
     {
         have = PlayerPrefs.GetInt("HaveIronArmor", 0);
         select = PlayerPrefs.GetInt("SelectIronArmor", 0);

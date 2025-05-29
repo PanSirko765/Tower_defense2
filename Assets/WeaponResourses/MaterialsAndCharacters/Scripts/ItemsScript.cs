@@ -13,7 +13,7 @@ public class CommonArmor : MonoBehaviour
     public int cost;
     public float updateCost;
     
-    private void Start()
+    private void Awake()
     {
         select = 1;
         hpPlus = PlayerPrefs.GetFloat("hpCommonArmor", 50);
@@ -24,14 +24,7 @@ public class CommonArmor : MonoBehaviour
 
 
 
-public class FireArmor 
-{
-    public int have = PlayerPrefs.GetInt("HaveIronArmor", 0);
-    public int select = PlayerPrefs.GetInt("SelectIronArmor", 0);
-    public int hpPlus = PlayerPrefs.GetInt("hpCommonArmor", 200);
-    public float fire = 55;
-    public int cost = 130;
-}
+
 
 
 
