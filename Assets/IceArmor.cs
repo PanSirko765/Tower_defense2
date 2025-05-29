@@ -10,7 +10,7 @@ public class IceArmor : MonoBehaviour
 	public float cost = 100;
 	public float updateCost;
 	public float updateSuperCost;
-	private void Start()
+	private void Awake()
 	{
 		have = PlayerPrefs.GetInt("HaveIceArmor", 0);
 		select = PlayerPrefs.GetInt("SelectIceArmor", 0);
