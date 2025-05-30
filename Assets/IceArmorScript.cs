@@ -82,7 +82,7 @@ public class IceArmrorScript : MonoBehaviour
                 armor.slowEmpyty = 0.3f;
                 PlayerPrefs.SetFloat("FireArmorSlow", armor.slowEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 1000;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
             }
@@ -90,10 +90,10 @@ public class IceArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 3;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
-                armor.slowEmpyty = 0.2f;
+                armor.slowEmpyty = 0.45f;
                 PlayerPrefs.SetFloat("FireArmorSlow", armor.slowEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 1750;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
             }
@@ -101,10 +101,10 @@ public class IceArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 4;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
-                armor.slowEmpyty = 0.1f;
+                armor.slowEmpyty = 0.5f;
                 PlayerPrefs.SetFloat("FireArmorSlow",armor.slowEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 2150;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
             }
@@ -112,7 +112,7 @@ public class IceArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 5;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
-                armor.slowEmpyty = 0.08f;
+                armor.slowEmpyty = 0.7f;
                 PlayerPrefs.SetFloat("FireArmorSlow", armor.slowEmpyty);
                 LevelText.text = armor.levelSuper + "level";
                 OnLevel();

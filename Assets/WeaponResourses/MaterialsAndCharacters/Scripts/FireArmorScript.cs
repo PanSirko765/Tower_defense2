@@ -74,10 +74,10 @@ public class FireArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 2;
                 PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 0.3f;
+                armor.fireEmpyty = 7f;
                 PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 750;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
             }
@@ -85,10 +85,10 @@ public class FireArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 3;
                 PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 0.2f;
+                armor.fireEmpyty = 9f;
                 PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 1000;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
             }
@@ -96,10 +96,10 @@ public class FireArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 4;
                 PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 0.1f;
+                armor.fireEmpyty = 10f;
                 PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 2000;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
             }
@@ -107,7 +107,7 @@ public class FireArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 5;
                 PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 0.08f;
+                armor.fireEmpyty = 15f;
                 PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
                 LevelText.text = armor.levelSuper + "level";
                 OnLevel();
