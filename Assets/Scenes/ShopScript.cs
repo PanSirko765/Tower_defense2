@@ -16,7 +16,7 @@ public class ShopScript : MonoBehaviour
         shopScript.SetActive(true);
         CommonArmor.SetActive(false);
         IceArmor.SetActive(false);
-        //FireArmor.SetActive(false);
+        FireArmor.SetActive(false);
         IronArmor.SetActive(false);
         ObjectOn.SetActive(true);
     }
