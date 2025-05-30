@@ -7,7 +7,7 @@ public class FireArmor : MonoBehaviour
     public float hpPlus;
     public float fireEmpyty;
     public int levelSuper;
-    public float cost = 100;
+    public float cost = 1500;
     public float updateCost;
     public float updateSuperCost;
     private void Awake()
@@ -18,7 +18,7 @@ public class FireArmor : MonoBehaviour
         fireEmpyty = PlayerPrefs.GetFloat("FireArmorSlow", 5f);
         levelSuper = PlayerPrefs.GetInt("FireArmorLevelSuper", 1);
         updateCost = PlayerPrefs.GetFloat("updateCostFireArmor", 60);
-        updateSuperCost = PlayerPrefs.GetFloat("SupCostFireArmor", 160);
+        updateSuperCost = PlayerPrefs.GetFloat("SupCostFireArmor", 500);
     }
 }
 

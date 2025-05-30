@@ -16,8 +16,8 @@ public class CommonArmor : MonoBehaviour
     private void Awake()
     {
         select = PlayerPrefs.GetInt("SelectCommonArmor", 1);
-        hpPlus = PlayerPrefs.GetFloat("hpCommonArmor", 50);
-        updateCost = PlayerPrefs.GetFloat("updateCostCommonArmor", 50);
+        hpPlus = PlayerPrefs.GetFloat("hpCommonArmor", 10);
+        updateCost = PlayerPrefs.GetFloat("updateCostCommonArmor", 80);
     }
     
 }
