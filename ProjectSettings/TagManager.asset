@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - New tag
   - Tower
+  - Barricade
   layers:
   - Default
   - TransparentFX
