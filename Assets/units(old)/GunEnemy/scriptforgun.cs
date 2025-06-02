@@ -7,7 +7,7 @@ public class scriptforgun : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if ( other.gameObject.tag == "Tower" || other.gameObject.tag == "")
         {
 
             animation.Play();
