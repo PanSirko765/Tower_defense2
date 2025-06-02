@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class TowerScript : MonoBehaviour
+public class BlockScript : MonoBehaviour
 {
     [SerializeField] private int hp;
-    [SerializeField] private float damage;
+    public int resistenceShield;
+    [SerializeField] private bool invisbleSee;
 
     public void Damage(int damage)
     {
         hp -= damage;
-        if(hp <= 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);
+
+
         }
     }
 }
+
+
