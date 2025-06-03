@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-    
+    public int hpTarget;
     [SerializeField]private int hp;
     [SerializeField]private int damage;
     [SerializeField]private float reDamage;
@@ -14,18 +14,33 @@ public class EnemyScript : MonoBehaviour
     public NavMeshAgent agent;
     public bool _isAttack;
     private float time;
-    public int hpTarget;
+    
+    public GameObject targetObj;
 
     private void Start()
     {
         time = reDamage;
+        Prioryty();
+    }
+    private void FixedUpdate()
+    {
+        if (_isAttack == false)
+        {
+            Prioryty();
+
+        }
+       
+    }
+    public void Prioryty()
+    {
+        agent.SetDestination(targetObj.transform.position);
     }
     public void Damage(int _damage)
     {
         hp -= _damage;
         if(hp <= 0)
         {
-           Destroy(gameObject);
+            Destroy(gameObject, 5f);
         }
         
     }
@@ -47,6 +62,7 @@ public class EnemyScript : MonoBehaviour
                     if(hpTarget <= 0)
                     {
                         _isAttack=false;
+                        Prioryty();
                     }
 
                 
@@ -64,7 +80,7 @@ public class EnemyScript : MonoBehaviour
                     _isAttack = true;
                     agent.SetDestination(other.gameObject.transform.position);
                     blockScript.ReturnHp(ref hpTarget);
-                    if (hpTarget <= 0) { _isAttack = false; }
+                    if (hpTarget <= 0) { _isAttack = false; Prioryty(); }
                 }
             }
       

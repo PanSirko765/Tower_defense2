@@ -1778,6 +1778,7 @@ GameObject:
   - component: {fileID: 7827524943184884113}
   - component: {fileID: 4137576142772770596}
   - component: {fileID: 1617460451200934675}
+  - component: {fileID: -5717782427934821044}
   m_Layer: 0
   m_Name: ExecutinorEnemy
   m_TagString: Enemy
@@ -1819,7 +1820,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.11
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1831,6 +1832,27 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-5717782427934821044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984131420922614455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d74988cf7a27b4187257fe1c115161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpTarget: 0
+  hp: 500
+  damage: 300
+  reDamage: 3
+  isTht: 0
+  isInvisble: 0
+  agent: {fileID: 1617460451200934675}
+  _isAttack: 0
+  targetObj: {fileID: 2391783982478180617, guid: 1203eabeb8708744d9e3a525cf37b5e4, type: 3}
 --- !u!1 &8113013422375311252
 GameObject:
   m_ObjectHideFlags: 0
