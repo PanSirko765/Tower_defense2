@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 311235295132868359}
   - component: {fileID: 8595347042763639220}
   - component: {fileID: 7795564517775056709}
+  - component: {fileID: 8834989133453846321}
   m_Layer: 0
   m_Name: HiddenShield (2)
   m_TagString: Enemy
@@ -695,6 +696,27 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8834989133453846321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731634040328723047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d74988cf7a27b4187257fe1c115161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpTarget: 0
+  hp: 130
+  damage: 10
+  reDamage: 1.3
+  isTht: 1
+  isInvisble: 1
+  agent: {fileID: 7795564517775056709}
+  _isAttack: 0
+  targetObj: {fileID: 2391783982478180617, guid: 1203eabeb8708744d9e3a525cf37b5e4, type: 3}
 --- !u!1 &3228537768434524905
 GameObject:
   m_ObjectHideFlags: 0
