@@ -74,10 +74,10 @@ public class ironArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 2;
                 PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.3f;
+                armor.slow = 0.2f;
                 PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 750;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
             }
@@ -85,10 +85,10 @@ public class ironArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 3;
                 PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.2f;
+                armor.slow = 0.15f;
                 PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 1250;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
             }
@@ -99,7 +99,7 @@ public class ironArmrorScript : MonoBehaviour
                 armor.slow = 0.1f;
                 PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
                 LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost *= 2;
+                armor.updateSuperCost = 1500;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
             }
@@ -107,7 +107,7 @@ public class ironArmrorScript : MonoBehaviour
             {
                 armor.levelSuper = 5;
                 PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.08f;
+                armor.slow = 0.05f;
                 PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
                 LevelText.text = armor.levelSuper + "level";
                 OnLevel();

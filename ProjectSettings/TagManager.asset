@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Button
   - Ground
+  - Enemy
+  - New tag
+  - Tower
+  - Barricade
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - Water
   - UI
   - NotLight
-  - 
+  - Player
   - 
   - 
   - 
