@@ -83,6 +83,10 @@ public class EnemyScript : MonoBehaviour
                     if (hpTarget <= 0) { _isAttack = false; Prioryty(); }
                 }
             }
+            else if (other.gameObject.tag == "Roocket")
+            {
+                Damage(50);
+            }
       
         }
         else
