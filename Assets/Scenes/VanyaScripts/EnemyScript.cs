@@ -40,7 +40,7 @@ public class EnemyScript : MonoBehaviour
         hp -= _damage;
         if(hp <= 0)
         {
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, 2f);
         }
         
     }
