@@ -6,6 +6,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private int hp;
     public int damage;
     [SerializeField] private bool invisbleSee;
+    [SerializeField] private bool notInvisbleSee;
     [SerializeField]
     private float Time_;
     [SerializeField]
@@ -13,6 +14,7 @@ public class TowerScript : MonoBehaviour
     private float time;
     [SerializeField]
     private GameObject BulletPrefab;
+    [SerializeField] private bool isRocket;
 
     
 
@@ -36,7 +38,24 @@ public class TowerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
-            objectsInTrigger.Add(other.gameObject);
+        {
+            EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
+            if (enemyScript.isInvisble) 
+            {
+                if (invisbleSee)
+                {
+                    objectsInTrigger.Add(other.gameObject);
+                }
+            }
+            else if (enemyScript.isInvisble)
+            {
+                if (notInvisbleSee)
+                {
+                    objectsInTrigger.Add(other.gameObject);
+                }
+            }
+        }
+            
     }
 
     private void Update()
@@ -53,7 +72,7 @@ public class TowerScript : MonoBehaviour
                 foreach (var item in objectsInTrigger)
                 {
                     Shoot(item.transform);
-                    break;
+
                 }
                 time = 0;
             }
@@ -65,10 +84,23 @@ public class TowerScript : MonoBehaviour
     private void Shoot(Transform enemy)
     {
         GameObject bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
-        BulletS buulet = bullet.GetComponent<BulletS>();
-        buulet.SetTower(this);
-        Vector3 dir = (enemy.position - firePoint.position).normalized;
-        buulet.rb.AddForce(dir * bulletSpeed);
+        if (!isRocket)
+        {
+            BulletS buulet = bullet.GetComponent<BulletS>();
+            buulet.SetTower(this);
+            Vector3 dir = (enemy.position - firePoint.position).normalized;
+            buulet.rb.AddForce(dir * bulletSpeed);
+        }
+        else
+        {
+            RocketScript buulet = bullet.GetComponent<RocketScript>();
+            buulet.SetTower(this);
+            Vector3 dir = (enemy.position - firePoint.position).normalized;
+            buulet.rb.AddForce(dir * bulletSpeed);
+        }
+        
+        
+            
 
     }
 }
