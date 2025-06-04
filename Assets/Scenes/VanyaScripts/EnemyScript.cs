@@ -51,7 +51,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Tower") { 
                 
-                TowerScript towerScript = other.gameObject.GetComponent<TowerScript>();
+                TowerScript towerScript = other.GetComponent<TowerScript>();
                 time -= Time.deltaTime;
                 if (time < 0) {
                     time = reDamage;

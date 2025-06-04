@@ -39,15 +39,15 @@ public class TowerScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
-            if (enemyScript.isInvisble) 
+            EnemyScript enemyScript = other.GetComponent<EnemyScript>();
+            if (enemyScript.isInvisble)
             {
                 if (invisbleSee)
                 {
                     objectsInTrigger.Add(other.gameObject);
                 }
             }
-            else if (enemyScript.isInvisble)
+            else if (!enemyScript.isInvisble)
             {
                 if (notInvisbleSee)
                 {
