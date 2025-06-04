@@ -4,7 +4,7 @@ using UnityEngine;
 public class RocketScript : MonoBehaviour
 {
     public Rigidbody rb;
-    public int Damage = 1;
+    public float Damage = 1;
     [SerializeField] private GameObject gameObject;
 
     private void Start()
