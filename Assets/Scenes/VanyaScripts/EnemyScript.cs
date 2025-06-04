@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int hpTarget;
-    [SerializeField]private int hp;
-    [SerializeField]private int damage;
+    public float hpTarget;
+    [SerializeField]private float hp;
+    [SerializeField]private float damage;
     [SerializeField]private float reDamage;
     [SerializeField] private bool isTht;
     public bool isInvisble;
@@ -35,7 +35,7 @@ public class EnemyScript : MonoBehaviour
     {
         agent.SetDestination(targetObj.transform.position);
     }
-    public void Damage(int _damage)
+    public void Damage(float _damage)
     {
         hp -= _damage;
         if(hp <= 0)
@@ -70,7 +70,7 @@ public class EnemyScript : MonoBehaviour
                 
             
             }
-            else if(other.gameObject.tag == "Block")
+            else if(other.gameObject.tag == "Barricade")
             {
                 BlockScript blockScript = other.gameObject.GetComponent<BlockScript>();
                 time -= Time.deltaTime;
@@ -81,6 +81,26 @@ public class EnemyScript : MonoBehaviour
                     agent.SetDestination(other.gameObject.transform.position);
                     blockScript.ReturnHp(ref hpTarget);
                     if (hpTarget <= 0) { _isAttack = false; Prioryty(); }
+                }
+            }
+            else if(other.gameObject.tag == "DJ")
+            {
+                DJScript towerScript = other.gameObject.GetComponent<DJScript>();
+                time -= Time.deltaTime;
+                if (time < 0)
+                {
+                    time = reDamage;
+                    towerScript.Damage(damage);
+                    _isAttack = true;
+                    agent.SetDestination(other.gameObject.transform.position);
+                    towerScript.ReturnHp(ref hpTarget);
+                    if (hpTarget <= 0)
+                    {
+                        _isAttack = false;
+                        Prioryty();
+                    }
+
+
                 }
             }
             else if (other.gameObject.tag == "Roocket")
@@ -97,7 +117,7 @@ public class EnemyScript : MonoBehaviour
                 isTht = false;
 
             }
-            else if (other.gameObject.tag == "Block")
+            else if (other.gameObject.tag == "Barricade")
             {
                 BlockScript blockScript = other.gameObject.GetComponent<BlockScript>();
                 if (blockScript.resistenceShield <= 0)
@@ -110,10 +130,14 @@ public class EnemyScript : MonoBehaviour
                 }
                 isTht = false;
             }
+            else if (other.gameObject.tag == "Roocket")
+            {
+                Damage(50);
+            }
         }
     }
 
-    public void ReturnDamage(ref int _damage)
+    public void ReturnDamage(ref float _damage)
     {
         _damage = damage;
     }

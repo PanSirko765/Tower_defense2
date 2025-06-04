@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TowerScript : MonoBehaviour
 {
-    [SerializeField] private int hp;
-    public int damage;
+    [SerializeField] private float hp;
+    public float damage;
     [SerializeField] private bool invisbleSee;
     [SerializeField] private bool notInvisbleSee;
     [SerializeField]
@@ -15,11 +16,10 @@ public class TowerScript : MonoBehaviour
     [SerializeField]
     private GameObject BulletPrefab;
     [SerializeField] private bool isRocket;
-
-    
-
-
-    public void Damage(int damage)
+    [SerializeField] private bool isShoker;
+    [SerializeField] private float slowing;
+    [SerializeField] private bool isFan;
+    public void Damage(float damage)
     {
         hp -= damage;
         if(hp <= 0)
@@ -28,7 +28,7 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    public void ReturnHp(ref int _hp) { 
+    public void ReturnHp(ref float _hp) { 
         _hp = hp;
     
     }
@@ -65,13 +65,14 @@ public class TowerScript : MonoBehaviour
 
         if (objectsInTrigger.Count > 0)
         {
+
             time += Time.deltaTime;
 
             if (time > Time_)
             {
                 foreach (var item in objectsInTrigger)
                 {
-                    Shoot(item.transform);
+                    Shoot(item.transform, item);
 
                 }
                 time = 0;
@@ -81,15 +82,30 @@ public class TowerScript : MonoBehaviour
 
     [SerializeField]
     private Transform firePoint;
-    private void Shoot(Transform enemy)
+    private void Shoot(Transform enemy, GameObject gameObject)
     {
         GameObject bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
         if (!isRocket)
         {
-            BulletS buulet = bullet.GetComponent<BulletS>();
-            buulet.SetTower(this);
-            Vector3 dir = (enemy.position - firePoint.position).normalized;
-            buulet.rb.AddForce(dir * bulletSpeed);
+            if (!isFan)
+            {
+                BulletS buulet = bullet.GetComponent<BulletS>();
+                buulet.SetTower(this);
+                Vector3 dir = (enemy.position - firePoint.position).normalized;
+                buulet.rb.AddForce(dir * bulletSpeed);
+                if (isShoker)
+                {
+                    NavMeshAgent navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+                    navMeshAgent.speed *= slowing;
+
+                }
+
+            }
+            else
+            {
+                NavMeshAgent navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+                navMeshAgent.speed *= slowing;
+            }
         }
         else
         {
@@ -98,9 +114,5 @@ public class TowerScript : MonoBehaviour
             Vector3 dir = (enemy.position - firePoint.position).normalized;
             buulet.rb.AddForce(dir * bulletSpeed);
         }
-        
-        
-            
-
     }
 }

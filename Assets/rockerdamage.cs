@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class rockerdamage : MonoBehaviour
 {
-    int damage;
+    float damage;
     public GameObject GameObject;
     public void SetTower(RocketScript rocketScript)
     {

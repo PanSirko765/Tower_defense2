@@ -11,6 +11,8 @@ TagManager:
   - Tower
   - Barricade
   - Block
+  - Roocket
+  - DJ
   layers:
   - Default
   - TransparentFX
