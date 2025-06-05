@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class ShopScriptCoin : MonoBehaviour
+public class ShopScriptCoin22 : MonoBehaviour
 {
     public int coins;
     public int coinsForGame;
 
-    public static ShopScriptCoin instance;
+    
 
     private void Start()
     {
