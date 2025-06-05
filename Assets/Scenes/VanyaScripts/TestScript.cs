@@ -5,8 +5,18 @@ public class TestScript : MonoBehaviour
     [SerializeField] private string select = "selectCanon";
     [SerializeField] private GameObject Canon;
     [SerializeField] private GameObject Minigan;
+    [SerializeField] private GameObject Shocker;
+    [SerializeField] private GameObject Fan;
+    [SerializeField] private GameObject Turret;
+    [SerializeField] private GameObject MiniTurret;
+    [SerializeField] private GameObject DJ;
+    [SerializeField] private GameObject RocketTurret;
     [SerializeField] private Camera Camera;
     [SerializeField] private GameObject Laser;
+    [SerializeField] private int price;   
+
+    
+    
     private void Update()
     {
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
@@ -28,9 +38,33 @@ public class TestScript : MonoBehaviour
         {
             gameObject = Canon;
         }
-        else
+        if (select == "Minigan")
         {
             gameObject = Minigan;
+        }
+        if (select == "Shocker")
+        {
+            gameObject = Shocker;
+        }
+        if (select == "Fan")
+        {
+            gameObject = Fan;
+        }
+        if (select == "Turret")
+        {
+            gameObject = Turret;
+        }
+        if (select == "MiniTurret")
+        {
+            gameObject = MiniTurret;
+        }
+        if (select == "RocketTurret")
+        {
+            gameObject = RocketTurret;
+        }
+        if (select == "DJ")
+        {
+            gameObject = DJ;
         }
     }
 
@@ -41,5 +75,29 @@ public class TestScript : MonoBehaviour
     public void SelectMinigan()
     {
         select = "Minigan";
+    }
+    public void SelectShocker()
+    {
+        select = "Shocker";
+    }
+    public void SelectFan()
+    {
+        select = "Fan";
+    }
+    public void SelectTurret()
+    {
+        select = "Turret";
+    }
+    public void SelectMiniTurret()
+    {
+        select = "MiniTurret";
+    }
+    public void SelectRocketTurret()
+    {
+        select = "RocketTurret";
+    }
+    public void SelectDJ()
+    {
+        select = "DJ";
     }
 }
