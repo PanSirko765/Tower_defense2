@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 2518779415473926254}
   - component: {fileID: 8439757262889359973}
   - component: {fileID: 5439560604820347469}
+  - component: {fileID: 2872558447106679836}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Tower
@@ -846,6 +847,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2872558447106679836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571905699808366206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e38555c86705f040ae641640d979778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 250
+  game: {fileID: 2934929895694722025}
 --- !u!1 &2704383865925539883
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,10 +1014,9 @@ GameObject:
   - component: {fileID: 4990223384166524752}
   - component: {fileID: 8838030462198783353}
   - component: {fileID: 7412486729712482180}
-  - component: {fileID: 1678576887815822348}
   m_Layer: 0
   m_Name: Rocket _Turret 1 1
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1102,27 +1116,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1678576887815822348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934929895694722025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 200
-  damage: 50
-  invisbleSee: 0
-  notInvisbleSee: 1
-  Time_: 1.5
-  bulletSpeed: 25
-  BulletPrefab: {fileID: 2792200254395684129, guid: edd308ddaec038242a7cc1e7fe9e6235, type: 3}
-  isRocket: 1
-  firePoint: {fileID: 8213465120141935510}
 --- !u!1 &2967504963328139316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,9 +1130,10 @@ GameObject:
   - component: {fileID: 5135443377721751106}
   - component: {fileID: 6042661018186570638}
   - component: {fileID: 6822274470641902925}
+  - component: {fileID: 5886656863957273782}
   m_Layer: 0
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,6 +1278,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 38.19, y: 3.71, z: 28.5}
   m_Center: {x: 0.0000005364418, y: 1.4, z: -0.00000008940697}
+--- !u!114 &5886656863957273782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2967504963328139316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 75
+  invisbleSee: 0
+  notInvisbleSee: 1
+  Time_: 1.5
+  bulletSpeed: 80
+  BulletPrefab: {fileID: 2599970950977950773, guid: 20d81d5dcaa10e248b431e6813ae1af1, type: 3}
+  isRocket: 1
+  isShoker: 0
+  slowing: 0
+  isFan: 0
+  firePoint: {fileID: 8213465120141935510}
 --- !u!1 &3200906868161091965
 GameObject:
   m_ObjectHideFlags: 0

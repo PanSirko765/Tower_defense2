@@ -4,14 +4,14 @@ using UnityEngine.AI;
 
 public class TowerScript : MonoBehaviour
 {
-    [SerializeField] private float hp;
+    
     public float damage;
     [SerializeField] private bool invisbleSee;
     [SerializeField] private bool notInvisbleSee;
     [SerializeField]
     private float Time_;
     [SerializeField]
-    private float bulletSpeed = 25;
+    private float bulletSpeed = 80;
     private float time;
     [SerializeField]
     private GameObject BulletPrefab;
@@ -19,19 +19,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private bool isShoker;
     [SerializeField] private float slowing;
     [SerializeField] private bool isFan;
-    public void Damage(float damage)
-    {
-        hp -= damage;
-        if(hp <= 0)
-        {
-            Destroy(gameObject, 5f);
-        }
-    }
-
-    public void ReturnHp(ref float _hp) { 
-        _hp = hp;
     
-    }
 
     private HashSet<GameObject> objectsInTrigger = new HashSet<GameObject>();
 
@@ -39,7 +27,7 @@ public class TowerScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyScript enemyScript = other.GetComponent<EnemyScript>();
+            GetDamageScriptToEnemy enemyScript = other.GetComponent<GetDamageScriptToEnemy>();
             if (enemyScript.isInvisble)
             {
                 if (invisbleSee)
@@ -57,7 +45,7 @@ public class TowerScript : MonoBehaviour
         }
             
     }
-
+    
     private void Update()
     {
         // Очистка удалённых объектов

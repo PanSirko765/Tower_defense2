@@ -20,7 +20,7 @@ public class BulletS : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>();
+            GetDamageScriptToEnemy enemyScript = other.gameObject.GetComponent<GetDamageScriptToEnemy>();
             enemyScript.Damage(Damage);
             Destroy(gameObject);
         }

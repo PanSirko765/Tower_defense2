@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 6943924295583389245}
   - component: {fileID: 380208159927083856}
   - component: {fileID: 1678084748883013594}
+  - component: {fileID: 6799436817501994032}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Tower
@@ -776,6 +777,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6799436817501994032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532608998284931575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e38555c86705f040ae641640d979778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 150
+  game: {fileID: 3654676274770710736}
 --- !u!1 &3654676274770710736
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,10 +803,9 @@ GameObject:
   - component: {fileID: 9145200198589812541}
   - component: {fileID: 1979546620259686224}
   - component: {fileID: 1195939535134560098}
-  - component: {fileID: 7004911966530434288}
   m_Layer: 0
   m_Name: Shocker 1 1 1
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,29 +905,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7004911966530434288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654676274770710736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  damage: 30
-  invisbleSee: 0
-  notInvisbleSee: 1
-  Time_: 0.5
-  bulletSpeed: 25
-  BulletPrefab: {fileID: 2599970950977950773, guid: 20d81d5dcaa10e248b431e6813ae1af1, type: 3}
-  isRocket: 0
-  isShoker: 1
-  slowing: 0.5
-  firePoint: {fileID: 2739020290551350986}
 --- !u!1 &5458453117549497569
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,9 +919,10 @@ GameObject:
   - component: {fileID: 4845560123456891160}
   - component: {fileID: 2943849245405306576}
   - component: {fileID: 1459057929825831938}
+  - component: {fileID: 8400215954021748949}
   m_Layer: 0
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,6 +1066,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8400215954021748949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5458453117549497569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 75
+  invisbleSee: 0
+  notInvisbleSee: 1
+  Time_: 1
+  bulletSpeed: 80
+  BulletPrefab: {fileID: 2599970950977950773, guid: 20d81d5dcaa10e248b431e6813ae1af1, type: 3}
+  isRocket: 0
+  isShoker: 0
+  slowing: 0
+  isFan: 0
+  firePoint: {fileID: 2739020290551350986}
 --- !u!1 &5892885743173310459
 GameObject:
   m_ObjectHideFlags: 0

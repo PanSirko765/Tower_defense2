@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8609082465547719023}
   - component: {fileID: 100458597513312359}
   - component: {fileID: 5836393998501672306}
+  - component: {fileID: 8002967529486789222}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Tower
@@ -136,6 +137,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8002967529486789222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95848210827158848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e38555c86705f040ae641640d979778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 325
+  game: {fileID: 1106941160070092105}
 --- !u!1 &1106941160070092105
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,10 +163,9 @@ GameObject:
   - component: {fileID: 5495714328243859724}
   - component: {fileID: 2022635399445029673}
   - component: {fileID: 556425224213571489}
-  - component: {fileID: 798056420464405046}
   m_Layer: 0
   m_Name: Minigun turret 1 1
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,26 +265,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &798056420464405046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106941160070092105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 200
-  damage: 70
-  invisbleSee: 1
-  notInvisbleSee: 1
-  Time_: 0.5
-  bulletSpeed: 25
-  BulletPrefab: {fileID: 2599970950977950773, guid: 20d81d5dcaa10e248b431e6813ae1af1, type: 3}
-  firePoint: {fileID: 4879789671163025250}
 --- !u!1 &1553522764968308710
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,9 +562,10 @@ GameObject:
   - component: {fileID: 873463117989693617}
   - component: {fileID: 817326784976254380}
   - component: {fileID: 2184533273193004491}
+  - component: {fileID: 1229436927702598957}
   m_Layer: 0
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -715,6 +710,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 53.1, y: 4.3, z: 39.1}
   m_Center: {x: -0.00000017881393, y: 1.33, z: 0.0000037252903}
+--- !u!114 &1229436927702598957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840015319002390967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04af15b7deb8a7f4bbca99199eae7eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 80
+  invisbleSee: 1
+  notInvisbleSee: 1
+  Time_: 0.3
+  bulletSpeed: 80
+  BulletPrefab: {fileID: 2599970950977950773, guid: 20d81d5dcaa10e248b431e6813ae1af1, type: 3}
+  isRocket: 0
+  isShoker: 0
+  slowing: 0
+  isFan: 0
+  firePoint: {fileID: 4879789671163025250}
 --- !u!1 &5450212499708142431
 GameObject:
   m_ObjectHideFlags: 0
