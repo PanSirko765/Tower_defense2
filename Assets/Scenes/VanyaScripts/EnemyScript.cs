@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int hpTarget;
-    [SerializeField]private int hp;
-    [SerializeField]private int damage;
+    public float hpTarget;
+    
+    [SerializeField]private float damage;
     [SerializeField]private float reDamage;
     [SerializeField] private bool isTht;
-    public bool isInvisble;
+    
     public NavMeshAgent agent;
-    public bool _isAttack;
+    public bool _isAttack; 
     private float time;
     
     public GameObject targetObj;
@@ -35,15 +35,7 @@ public class EnemyScript : MonoBehaviour
     {
         agent.SetDestination(targetObj.transform.position);
     }
-    public void Damage(int _damage)
-    {
-        hp -= _damage;
-        if(hp <= 0)
-        {
-            Destroy(gameObject, 5f);
-        }
-        
-    }
+    
 
     private void OnTriggerStay(Collider other)
     {
@@ -51,7 +43,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Tower") { 
                 
-                TowerScript towerScript = other.gameObject.GetComponent<TowerScript>();
+                GetDamageTower towerScript = other.GetComponent<GetDamageTower>();
                 time -= Time.deltaTime;
                 if (time < 0) {
                     time = reDamage;
@@ -70,7 +62,7 @@ public class EnemyScript : MonoBehaviour
                 
             
             }
-            else if(other.gameObject.tag == "Block")
+            else if(other.gameObject.tag == "Barricade")
             {
                 BlockScript blockScript = other.gameObject.GetComponent<BlockScript>();
                 time -= Time.deltaTime;
@@ -83,33 +75,44 @@ public class EnemyScript : MonoBehaviour
                     if (hpTarget <= 0) { _isAttack = false; Prioryty(); }
                 }
             }
+            else if(other.gameObject.tag == "DJ")
+            {
+                GetDamageTower towerScript = other.gameObject.GetComponent<GetDamageTower>();
+                time -= Time.deltaTime;
+                if (time < 0)
+                {
+                    time = reDamage;
+                    towerScript.Damage(damage);
+                    _isAttack = true;
+                    agent.SetDestination(other.gameObject.transform.position);
+                    towerScript.ReturnHp(ref hpTarget);
+                    if (hpTarget <= 0)
+                    {
+                        _isAttack = false;
+                        Prioryty();
+                    }
+
+
+                }
+            }
+            
       
         }
         else
         {
             if (other.gameObject.tag == "Tower")
             {
-                Destroy(other.gameObject, 1f);
+                GetDamageTower towerScript = other.GetComponent<GetDamageTower>();
+                towerScript.Damage(1000000);
                 isTht = false;
 
             }
-            else if (other.gameObject.tag == "Block")
-            {
-                BlockScript blockScript = other.gameObject.GetComponent<BlockScript>();
-                if (blockScript.resistenceShield <= 0)
-                {
-                    Destroy(other.gameObject, 1f);
-                }
-                else
-                {
-                    blockScript.resistenceShield -= 1;
-                }
-                isTht = false;
-            }
+            
+            
         }
     }
 
-    public void ReturnDamage(ref int _damage)
+    public void ReturnDamage(ref float _damage)
     {
         _damage = damage;
     }

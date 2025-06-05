@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class BlockScript : MonoBehaviour
 {
-    [SerializeField] private int hp;
+    [SerializeField] private float hp;
     public int resistenceShield;
     
 
-    public void Damage(int damage)
+    public void Damage(float damage)
     {
         hp -= damage;
         if (hp <= 0)
@@ -16,7 +16,7 @@ public class BlockScript : MonoBehaviour
 
         }
     }
-    public void ReturnHp(ref int _hp)
+    public void ReturnHp(ref float _hp)
     {
         _hp = hp;
 
