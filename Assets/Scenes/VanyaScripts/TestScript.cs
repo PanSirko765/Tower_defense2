@@ -13,10 +13,10 @@ public class TestScript : MonoBehaviour
     [SerializeField] private GameObject RocketTurret;
     [SerializeField] private Camera Camera;
     [SerializeField] private GameObject Laser;
-    [SerializeField] private int price;   
+    [SerializeField] private int price;
 
     
-    
+
     private void Update()
     {
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
