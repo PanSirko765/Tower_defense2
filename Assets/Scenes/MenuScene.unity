@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 115004214}
   - component: {fileID: 115004213}
   - component: {fileID: 115004215}
+  - component: {fileID: 115004216}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -400,6 +401,20 @@ MonoBehaviour:
   volume: {fileID: 115004213}
   bloom: {fileID: 0}
   skyMat: {fileID: 2100000, guid: 40f6df0d6473c63449dbd29110e6b50b, type: 2}
+--- !u!114 &115004216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115004209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c3cea34ba7cb0418ab3f23b03e5f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  coinsForGame: 0
 --- !u!1001 &130005405
 PrefabInstance:
   m_ObjectHideFlags: 0

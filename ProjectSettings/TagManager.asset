@@ -7,6 +7,12 @@ TagManager:
   - Button
   - Ground
   - Enemy
+  - New tag
+  - Tower
+  - Barricade
+  - Block
+  - Roocket
+  - DJ
   layers:
   - Default
   - TransparentFX
