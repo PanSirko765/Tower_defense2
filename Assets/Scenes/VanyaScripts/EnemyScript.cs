@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class EnemyScript : MonoBehaviour
 {
     public float hpTarget;
-    [SerializeField]private float hp;
+    
     [SerializeField]private float damage;
     [SerializeField]private float reDamage;
     [SerializeField] private bool isTht;
-    public bool isInvisble;
+    
     public NavMeshAgent agent;
-    public bool _isAttack;
+    public bool _isAttack; 
     private float time;
     
     public GameObject targetObj;
@@ -35,15 +35,7 @@ public class EnemyScript : MonoBehaviour
     {
         agent.SetDestination(targetObj.transform.position);
     }
-    public void Damage(float _damage)
-    {
-        hp -= _damage;
-        if(hp <= 0)
-        {
-            Destroy(gameObject, 2f);
-        }
-        
-    }
+    
 
     private void OnTriggerStay(Collider other)
     {
@@ -51,7 +43,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Tower") { 
                 
-                TowerScript towerScript = other.GetComponent<TowerScript>();
+                GetDamageTower towerScript = other.GetComponent<GetDamageTower>();
                 time -= Time.deltaTime;
                 if (time < 0) {
                     time = reDamage;
@@ -85,7 +77,7 @@ public class EnemyScript : MonoBehaviour
             }
             else if(other.gameObject.tag == "DJ")
             {
-                DJScript towerScript = other.gameObject.GetComponent<DJScript>();
+                GetDamageTower towerScript = other.gameObject.GetComponent<GetDamageTower>();
                 time -= Time.deltaTime;
                 if (time < 0)
                 {
@@ -103,37 +95,20 @@ public class EnemyScript : MonoBehaviour
 
                 }
             }
-            else if (other.gameObject.tag == "Roocket")
-            {
-                Damage(50);
-            }
+            
       
         }
         else
         {
             if (other.gameObject.tag == "Tower")
             {
-                Destroy(other.gameObject, 1f);
+                GetDamageTower towerScript = other.GetComponent<GetDamageTower>();
+                towerScript.Damage(1000000);
                 isTht = false;
 
             }
-            else if (other.gameObject.tag == "Barricade")
-            {
-                BlockScript blockScript = other.gameObject.GetComponent<BlockScript>();
-                if (blockScript.resistenceShield <= 0)
-                {
-                    Destroy(other.gameObject, 1f);
-                }
-                else
-                {
-                    blockScript.resistenceShield -= 1;
-                }
-                isTht = false;
-            }
-            else if (other.gameObject.tag == "Roocket")
-            {
-                Damage(50);
-            }
+            
+            
         }
     }
 

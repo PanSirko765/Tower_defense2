@@ -13,7 +13,7 @@ public class HiddenShieldScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")|| other.gameObject.CompareTag("Tower")|| other.gameObject.CompareTag("Block"))
+        if (other.gameObject.CompareTag("Player")|| other.gameObject.CompareTag("Tower"))
         {
 
             animation.Play();

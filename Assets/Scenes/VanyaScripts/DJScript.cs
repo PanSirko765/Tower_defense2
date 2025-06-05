@@ -3,28 +3,15 @@ using UnityEngine;
 
 public class DJScript : MonoBehaviour
 {
-    [SerializeField] private float hp;
+    
     public float _boostDamage;
-    public void Damage(float damage)
-    {
-        hp -= damage;
-        if (hp <= 0)
-        {
-            Destroy(gameObject, 5f);
-        }
-    }
-
-    public void ReturnHp(ref float _hp)
-    {
-        _hp = hp;
-
-    }
+    
 
     private HashSet<GameObject> objectsInTrigger = new HashSet<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tower"))
+        if (other.CompareTag("Block"))
         {
             objectsInTrigger.Add(other.gameObject);
         }
@@ -40,7 +27,7 @@ public class DJScript : MonoBehaviour
         {
                 foreach (var item in objectsInTrigger)
                 {
-                Shoot(item);
+                    Shoot(item);
                 }
         }
     }

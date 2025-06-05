@@ -1481,6 +1481,7 @@ GameObject:
   - component: {fileID: 1051535148976001197}
   - component: {fileID: 3236266769273821816}
   - component: {fileID: 6646636464770692020}
+  - component: {fileID: 4325487290499396036}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: DJ
@@ -1604,6 +1605,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4325487290499396036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985816354114956738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e38555c86705f040ae641640d979778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 200
+  game: {fileID: 7248894578648312419}
 --- !u!1 &6000988006278227001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1725,7 @@ GameObject:
   - component: {fileID: 5321946519950667676}
   - component: {fileID: 6591128722062179672}
   - component: {fileID: 5799225711642090835}
+  - component: {fileID: 9010550899316196657}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -1861,6 +1877,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &9010550899316196657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440764993395115181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba31d0fe1e3298468a7db3e6a3a1ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boostDamage: 1.3
 --- !u!1 &6735425461640212921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,10 +2041,9 @@ GameObject:
   - component: {fileID: 7741375248479439289}
   - component: {fileID: 7475649703617894871}
   - component: {fileID: 2705157000181179260}
-  - component: {fileID: 1793634594286030659}
   m_Layer: 0
   m_Name: DJ 1 1
-  m_TagString: DJ
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2114,20 +2142,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1793634594286030659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7248894578648312419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba31d0fe1e3298468a7db3e6a3a1ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 150
-  _boostDamage: 1.2
 --- !u!1 &7767994154396077473
 GameObject:
   m_ObjectHideFlags: 0

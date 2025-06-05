@@ -121,10 +121,9 @@ GameObject:
   - component: {fileID: 3071868150563210826}
   - component: {fileID: 661891185664603819}
   - component: {fileID: 7547530851371935321}
-  - component: {fileID: 4688084032202281963}
   m_Layer: 0
   m_Name: SwordEnemy (1)
-  m_TagString: Enemy
+  m_TagString: New tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,27 +174,6 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4688084032202281963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433758226263661122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25d74988cf7a27b4187257fe1c115161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpTarget: 0
-  hp: 100
-  damage: 20
-  reDamage: 1.3
-  isTht: 0
-  isInvisble: 0
-  agent: {fileID: 7547530851371935321}
-  _isAttack: 0
-  targetObj: {fileID: 2391783982478180617, guid: 1203eabeb8708744d9e3a525cf37b5e4, type: 3}
 --- !u!1 &1949475992859773403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1058,7 @@ GameObject:
   - component: {fileID: 8438244181714742509}
   - component: {fileID: 3361090481043272801}
   - component: {fileID: 3814009281844227343}
+  - component: {fileID: 3538303832824994747}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1171,6 +1150,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: {fileID: 1973807170281290598}
+--- !u!114 &3538303832824994747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775418272852744593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d74988cf7a27b4187257fe1c115161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpTarget: 0
+  damage: 20
+  reDamage: 1.3
+  isTht: 0
+  agent: {fileID: 7547530851371935321}
+  _isAttack: 0
+  targetObj: {fileID: 2391783982478180617, guid: 1203eabeb8708744d9e3a525cf37b5e4, type: 3}
 --- !u!1 &5069973566241189557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1670,7 @@ GameObject:
   - component: {fileID: 433502073586461188}
   - component: {fileID: 6030860771862695841}
   - component: {fileID: 7659135647343338509}
+  - component: {fileID: 3551315170597636945}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Enemy
@@ -1798,6 +1797,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3551315170597636945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7214791158053741560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd2a48be955dc84d8f4c4a07255a65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  object: {fileID: 1433758226263661122}
+  isInvisble: 0
 --- !u!1 &7502702684952403055
 GameObject:
   m_ObjectHideFlags: 0
