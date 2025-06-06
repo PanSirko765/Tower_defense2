@@ -19,6 +19,8 @@ public class ShielsdSword : MonoBehaviour
     public Text textcostupdate;
     public GameObject buttonBuy;
     public SwordActive1 active1;
+
+    
     void Start()
     {
         have = PlayerPrefs.GetInt("HaveSSword", 0);
@@ -63,7 +65,7 @@ public class ShielsdSword : MonoBehaviour
     }
     public void Select()
     {
-        active1.OnSelect(3);
+        active1.OnSelectItem(3);
     }
     public void Upgrade()
     {
@@ -73,7 +75,7 @@ public class ShielsdSword : MonoBehaviour
         updateCost *= 1.3f;
         Math.Round(updateCost);
         PlayerPrefs.SetFloat("SSwordUpdateSword", updateCost);
-        text.text = "+" + damage + "hp";
+        text.text = damage + "дамагу";
         update.text = "Прокачати за" + updateCost;
     }
 

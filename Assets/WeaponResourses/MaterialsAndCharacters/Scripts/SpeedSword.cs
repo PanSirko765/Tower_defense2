@@ -63,7 +63,7 @@ public class SpeedSword : MonoBehaviour
     }
     public void Select()
     {
-        active1.OnSelect(2);
+        active1.OnSelectItem(2);
     }
     public void Upgrade()
     {
@@ -73,7 +73,7 @@ public class SpeedSword : MonoBehaviour
         updateCost *= 1.3f;
         Math.Round(updateCost);
         PlayerPrefs.SetFloat("SpeedSwordUpdateSword", updateCost);
-        text.text = "+" + damage + "hp";
+        text.text = damage + "дамагу";
         update.text = "Прокачати за" + updateCost;
     }
 
