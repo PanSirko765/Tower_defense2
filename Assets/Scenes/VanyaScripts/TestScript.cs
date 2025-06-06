@@ -16,6 +16,7 @@ public class TestScript : MonoBehaviour
     [SerializeField] private int price;
 
     
+    
 
     private void Update()
     {
@@ -23,13 +24,24 @@ public class TestScript : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit) && Input.GetMouseButtonUp(0))
+        if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonUp(0))
         {
             sdgiuvgf(select, ref Laser);
             Vector3 vector3 = new Vector3(hit.point.x, 0.3f, hit.point.z);
-            Instantiate(Laser, vector3 , Quaternion.Euler(0,180,0));
+            Instantiate(Laser, vector3, Quaternion.Euler(0, 180, 0));
             Debug.Log(Input.mousePosition);
         }
+
+        else if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonUp(1) && Input.GetKey(KeyCode.LeftShift)) { 
+            if(hit.transform.gameObject.tag == "Tower")
+            {
+                Destroy(hit.transform.gameObject);
+            }
+        
+        
+        }
+
+        
     }
 
     void sdgiuvgf(string _name, ref GameObject gameObject)
