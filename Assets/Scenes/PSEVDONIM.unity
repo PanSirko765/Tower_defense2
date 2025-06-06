@@ -16448,7 +16448,7 @@ MonoBehaviour:
   _select: 0
   _have: 0
   SelectTowers: {fileID: 1564262968}
-  buy: {fileID: 0}
+  buy: {fileID: 608946712}
 --- !u!1001 &1787232090
 PrefabInstance:
   m_ObjectHideFlags: 0
