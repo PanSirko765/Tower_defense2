@@ -32,6 +32,15 @@ public class TestScript : MonoBehaviour
             Debug.Log(Input.mousePosition);
         }
 
+        else if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonUp(1) && Input.GetKey(KeyCode.LeftShift)) { 
+            if(hit.transform.gameObject.tag == "Tower")
+            {
+                Destroy(hit.transform.gameObject);
+            }
+        
+        
+        }
+
         
     }
 
