@@ -11,7 +11,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField]
     private float Time_;
     [SerializeField]
-    private float bulletSpeed = 80;
+    private float bulletSpeed = 20000;
     private float time;
     [SerializeField]
     private GameObject BulletPrefab;
@@ -48,7 +48,7 @@ public class TowerScript : MonoBehaviour
     
     private void Update()
     {
-        // Очистка удалённых объектов
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         objectsInTrigger.RemoveWhere(collider => collider == null);
 
         if (objectsInTrigger.Count > 0)

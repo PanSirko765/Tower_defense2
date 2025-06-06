@@ -8,7 +8,7 @@ public class BulletS : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 10f);
     }
 
     public void SetTower(TowerScript towerSkript)
