@@ -11,7 +11,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField]
     private float Time_;
     [SerializeField]
-    private float bulletSpeed = 20000;
+    private float bulletSpeed = 50;
     private float time;
     [SerializeField]
     private GameObject BulletPrefab;
@@ -80,7 +80,7 @@ public class TowerScript : MonoBehaviour
                 BulletS buulet = bullet.GetComponent<BulletS>();
                 buulet.SetTower(this);
                 Vector3 dir = (enemy.position - firePoint.position).normalized;
-                buulet.rb.AddForce(dir * bulletSpeed);
+                buulet.rb.AddForce(dir * bulletSpeed, ForceMode.Impulse);
                 if (isShoker)
                 {
                     NavMeshAgent navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
@@ -100,7 +100,7 @@ public class TowerScript : MonoBehaviour
             RocketScript buulet = bullet.GetComponent<RocketScript>();
             buulet.SetTower(this);
             Vector3 dir = (enemy.position - firePoint.position).normalized;
-            buulet.rb.AddForce(dir * bulletSpeed);
+            buulet.rb.AddForce(dir * bulletSpeed, ForceMode.Impulse);
         }
     }
 }
