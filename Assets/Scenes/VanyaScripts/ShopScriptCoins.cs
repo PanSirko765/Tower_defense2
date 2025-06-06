@@ -7,7 +7,7 @@ public class ShopScriptCoin22 : MonoBehaviour
 
     public static ShopScriptCoin22 instance;
 
-    private void Start()
+    private void Awake()
     {
         coins = PlayerPrefs.GetInt("coins", 0);
         coinsForGame = PlayerPrefs.GetInt("coinsForGame", 0);
