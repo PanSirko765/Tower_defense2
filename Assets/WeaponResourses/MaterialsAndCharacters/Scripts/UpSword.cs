@@ -63,7 +63,7 @@ public class UpSword : MonoBehaviour
     }
     public void Select()
     {
-        active1.OnSelect(4);
+        active1.OnSelectItem(4);
     }
     public void Upgrade()
     {
@@ -73,7 +73,7 @@ public class UpSword : MonoBehaviour
         updateCost *= 1.3f;
         Math.Round(updateCost);
         PlayerPrefs.SetFloat("USwordUpdateSword", updateCost);
-        text.text = "+" + damage + "hp";
+        text.text = damage + "дамагу";
         update.text = "Прокачати за" + updateCost;
     }
 

@@ -48,7 +48,7 @@ public class CiommonSwordScript : MonoBehaviour
     }
     public void Select()
     {
-        active1.OnSelect(0);
+        active1.OnSelectItem(0);
     }
     public void Upgrade()
     {
@@ -58,7 +58,7 @@ public class CiommonSwordScript : MonoBehaviour
         updateCost *= 1.3f;
         Math.Round(updateCost);
         PlayerPrefs.SetFloat("CommonSwordUpdateSword", updateCost);
-        text.text = "+" + damage + "hp";
+        text.text =  damage + "дамагу";
         update.text = "Прокачати за" + updateCost;
     }
 
