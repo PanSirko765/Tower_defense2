@@ -37,12 +37,16 @@ public class VampirSwordSe : MonoBehaviour
         OnLevel();
     }
 
+    
+
     public void Have()
     {
         if (select == 0)
         {
             buttonBuy.SetActive(true);
         }
+
+        
     }
 
     public void Buy()
@@ -64,7 +68,7 @@ public class VampirSwordSe : MonoBehaviour
     }
     public void Select()
     {
-        active1.OnSelect(1);
+        active1.OnSelectItem(1);
     }
     public void Upgrade()
     {
@@ -74,7 +78,7 @@ public class VampirSwordSe : MonoBehaviour
         updateCost *= 1.3f;
         Math.Round(updateCost);
         PlayerPrefs.SetFloat("VampirSwordUpdateSword", updateCost);
-        text.text = "+" + damage + "hp";
+        text.text = damage + "дамагу";
         update.text = "Прокачати за" + updateCost;
     }
 
