@@ -2146,7 +2146,6 @@ GameObject:
   - component: {fileID: 1105186814}
   - component: {fileID: 1105186813}
   - component: {fileID: 1105186816}
-  - component: {fileID: 1105186817}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2252,20 +2251,6 @@ MonoBehaviour:
   Camera: {fileID: 1105186814}
   Laser: {fileID: 0}
   price: 0
---- !u!114 &1105186817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105186812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c3cea34ba7cb0418ab3f23b03e5f12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins: 0
-  coinsForGame: 0
 --- !u!1001 &1211743469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2680,6 +2665,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579406074}
   m_CullTransparentMesh: 1
+--- !u!1 &1844315377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844315379}
+  - component: {fileID: 1844315378}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1844315378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844315377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c3cea34ba7cb0418ab3f23b03e5f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  coinsForGame: 0
+--- !u!4 &1844315379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844315377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 510.24, y: 46.3, z: 358.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2311170455221423085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2824,3 +2855,4 @@ SceneRoots:
   - {fileID: 221789486}
   - {fileID: 148249860}
   - {fileID: 996982049}
+  - {fileID: 1844315379}
