@@ -2885,11 +2885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4294263682549720762, guid: 12d685094dc034c4798ed9e69e2b737d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.06851
+      value: 7.907
       objectReference: {fileID: 0}
     - target: {fileID: 4294263682549720762, guid: 12d685094dc034c4798ed9e69e2b737d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.340206
+      value: 21.007
       objectReference: {fileID: 0}
     - target: {fileID: 4294263682549720762, guid: 12d685094dc034c4798ed9e69e2b737d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4896,8 +4896,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 316505510}
-        m_TargetAssemblyTypeName: CanonTowerScript, Assembly-CSharp
+      - m_Target: {fileID: 1622217670}
+        m_TargetAssemblyTypeName: FanSelect, Assembly-CSharp
         m_MethodName: NoSelect
         m_Mode: 1
         m_Arguments:
@@ -10556,7 +10556,7 @@ GameObject:
   - component: {fileID: 1155101806}
   - component: {fileID: 1155101805}
   - component: {fileID: 1155101804}
-  - component: {fileID: 1155101803}
+  - component: {fileID: 1155101807}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -10580,18 +10580,6 @@ Transform:
   - {fileID: 97458857}
   m_Father: {fileID: 1536961615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1155101803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155101801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c10dd92b72ebe04f894238ed966e899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1155101804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10666,6 +10654,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155101801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1155101807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155101801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e325d2a1c0a9e074d87e9c3afbd38b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159172741
 GameObject:
   m_ObjectHideFlags: 0
@@ -12422,8 +12422,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 316505510}
-        m_TargetAssemblyTypeName: CanonTowerScript, Assembly-CSharp
+      - m_Target: {fileID: 1622217670}
+        m_TargetAssemblyTypeName: FanSelect, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 1
         m_Arguments:
@@ -14435,8 +14435,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1778328468}
-        m_TargetAssemblyTypeName: DJScriptSelect, Assembly-CSharp
+      - m_Target: {fileID: 1622217670}
+        m_TargetAssemblyTypeName: FanSelect, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
         m_Arguments:
@@ -16566,18 +16566,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ccf8b208df06743b14f9512ceabbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canon: {fileID: 0}
-  DJ: {fileID: 0}
-  Minigun: {fileID: 0}
-  MIni: {fileID: 0}
-  Normal: {fileID: 0}
-  Rokcet: {fileID: 0}
-  Shoker: {fileID: 0}
-  Fan: {fileID: 0}
+  canon: {fileID: 1935874110}
+  DJ: {fileID: 529467501}
+  Minigun: {fileID: 951304433}
+  MIni: {fileID: 858853074}
+  Normal: {fileID: 551127841}
+  Rokcet: {fileID: 1253942494}
+  Shoker: {fileID: 8478980}
+  Fan: {fileID: 1122869281}
   _select: 0
   _have: 0
-  SelectTowers: {fileID: 0}
-  buy: {fileID: 0}
+  SelectTowers: {fileID: 1564262968}
+  buy: {fileID: 1118578564}
 --- !u!1001 &1632377067
 PrefabInstance:
   m_ObjectHideFlags: 0

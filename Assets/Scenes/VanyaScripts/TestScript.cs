@@ -117,6 +117,7 @@ public class TestScript : MonoBehaviour
             gameObject = DJ;
             price = 1500;
         }
+        
     }
 
     public void SelectCanon()

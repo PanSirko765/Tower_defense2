@@ -4,9 +4,15 @@ public class BulletS : MonoBehaviour
 {
     public Rigidbody rb;
     private float Damage = 1;
+    
+    
+
+    
+
 
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, 3f);
     }
