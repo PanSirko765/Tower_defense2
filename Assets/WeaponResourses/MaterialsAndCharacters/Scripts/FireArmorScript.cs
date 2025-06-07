@@ -50,20 +50,30 @@ public class FireArmrorScript : MonoBehaviour
     }
     public void BuyThis()
     {
-        @object.SetActive(false);
-        armor.have = 1;
-        PlayerPrefs.SetInt("HaveIceArmor", armor.have);
+        if(ShopScriptCoin22.instance.coins >= 1500)
+        {
+            ShopScriptCoin22.instance.coins -= 1500;
+            @object.SetActive(false);
+            armor.have = 1;
+            PlayerPrefs.SetInt("HaveIceArmor", armor.have);
+        }
+        
     }
     public void Upgrade()
     {
-        armor.hpPlus *= 1.2f;
-        Math.Round(armor.hpPlus);
-        PlayerPrefs.SetFloat("hpIceArmor", armor.hpPlus);
-        armor.updateCost *= 1.3f;
-        Math.Round(armor.updateCost);
-        PlayerPrefs.SetFloat("updateCostIceArmor", armor.updateCost);
-        text.text = "+" + armor.hpPlus + "hp";
-        update.text = "Прокачати за" + armor.updateCost;
+        if(ShopScriptCoin22.instance.coins >= armor.updateCost)
+        {
+           
+            armor.hpPlus *= 1.2f;
+            Math.Round(armor.hpPlus);
+            PlayerPrefs.SetFloat("hpIceArmor", armor.hpPlus);
+            armor.updateCost *= 1.3f;
+            Math.Round(armor.updateCost);
+            PlayerPrefs.SetFloat("updateCostIceArmor", armor.updateCost);
+            text.text = "+" + armor.hpPlus + "hp";
+            update.text = "Прокачати за" + armor.updateCost;
+        }
+        
     }
 
     public void UpdradeSuper()
