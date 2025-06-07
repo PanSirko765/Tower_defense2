@@ -16,7 +16,7 @@ public class MoveScript : MonoBehaviour
 
     private void Update()
     {
-        float h = Input.GetAxis("H");
+        float h = Input.GetAxis("");
         float v = Input.GetAxis("V");
         Vector3 move = new Vector3(h, 0f, v);
 

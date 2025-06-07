@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class zfgcfdd : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnMouseDown()
     {
-        if(collision.gameObject.tag == "Player")
-        {
+        
+        
             SceneManager.LoadScene(0);
-        }
+        
         
     }
 }
