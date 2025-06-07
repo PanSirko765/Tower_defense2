@@ -12,12 +12,10 @@ public class DefetScript : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             game.SetActive(true);
-            time -= Time.deltaTime;
-            if(time < 0)
-            {
-                game.SetActive(false);
+            
+            
                 SceneManager.LoadScene(2);
-            }
+            
 
             
         }

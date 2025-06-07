@@ -20,11 +20,20 @@ public class TestScript : MonoBehaviour
     [SerializeField] public Text text;
     [SerializeField] private int Limit;
     [SerializeField] private int HWM;
+
+    [SerializeField] private GameObject _miniturret;
+    [SerializeField] private int _selectMoini;
+
    
     private void Start()
     {
-        shop.coinsForGame = 10000;
+        shop.coinsForGame = 100000000;
         Limit = 20;
+        _selectMoini = PlayerPrefs.GetInt("SelectMiniTower", 0);
+        if(_selectMoini == 0)
+        {
+            _miniturret.SetActive(false);
+        }
        
 
     }
@@ -41,7 +50,7 @@ public class TestScript : MonoBehaviour
             {
                  if (shop.coinsForGame > 0)
                  {
-                   if (Limit >= HWM)
+                   if (Limit >= HWM && hit.point.x > 401 && hit.point.x < 600 && hit.point.z > 397.5f && hit.point.z < 481)
                    {
                     sdgiuvgf(select, ref Laser);
                     Vector3 vector3 = new Vector3(hit.point.x, 0.3f, hit.point.z);
@@ -117,6 +126,7 @@ public class TestScript : MonoBehaviour
             gameObject = DJ;
             price = 1500;
         }
+        
         
     }
 

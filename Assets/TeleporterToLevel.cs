@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class TeleporterToLevel : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnMouseDown()
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene(3);
-        }
+        
+        
+         SceneManager.LoadScene(3);
+        
     }
 }
