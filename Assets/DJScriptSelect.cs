@@ -30,7 +30,24 @@ public class DJScriptSelect : MonoBehaviour
 
     }
 
-    public void Buy() { if (ShopScriptCoin22.instance.coins >= 950) { ShopScriptCoin22.instance.coins -= 950; _have = 1; PlayerPrefs.SetInt("HaveDJTower", 1); buy.SetActive(false); } }
+    public void Buy() 
+    {
+        if (ShopScriptCoin22.instance == null) {
+            Debug.Log("Hello World");
+        
+        }
+        if (ShopScriptCoin22.instance.coins >= 950)
+        { 
+            ShopScriptCoin22.instance.coins -= 950; 
+            _have = 1; 
+            PlayerPrefs.SetInt("HaveDJTower", 1); 
+            buy.SetActive(false); 
+        
+        } 
+    
+    
+    
+    }
 
     void OnMouseDown()
     {

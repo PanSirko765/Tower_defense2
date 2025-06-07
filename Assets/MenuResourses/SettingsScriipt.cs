@@ -44,7 +44,13 @@ public class SettingsScriipt : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F4))
         {
             SelectSkin();
-        }    
+        }
+
+        if (Input.GetKeyUp(KeyCode.F3))
+        {
+
+            GoGame();
+        }
         
         if(GrSetPanel.activeSelf == true)
         {
@@ -74,6 +80,10 @@ public class SettingsScriipt : MonoBehaviour
         }
     }
     
+    public void GoGame()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void OnOffSettings()
     {
         gameObject.SetActive(!gameObject.activeSelf);
