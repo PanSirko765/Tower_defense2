@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectSkinsScene.unity
     guid: 6bad705da0ade584db42c3dead43d309
+  - enabled: 1
+    path: Assets/Scenes/PSEVDONIM.unity
+    guid: 0c64d8b7d3376cc4490202dea1e85bf5
+  - enabled: 1
+    path: Assets/Scenes/Dima.unity
+    guid: a58c4d449116c4042a728dacdd5d8d06
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
