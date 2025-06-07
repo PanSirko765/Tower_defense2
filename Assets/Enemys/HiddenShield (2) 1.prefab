@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 6115542115180898817}
   - component: {fileID: 3674097754414396389}
   - component: {fileID: 2574705536230251295}
+  - component: {fileID: 5760356135755572816}
   m_Layer: 0
   m_Name: HiddenShield (2) 1
   m_TagString: New tag
@@ -1484,6 +1485,18 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5760356135755572816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056839085808865610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acbd7cd006b9e44282f188b2716bc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4256800779721954932
 GameObject:
   m_ObjectHideFlags: 0

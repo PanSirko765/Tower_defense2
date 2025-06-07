@@ -3,11 +3,18 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class MobSpawn : MonoBehaviour
 {
-  
-   
+    public static MobSpawn Instanse;
+    void Awake()
+    {
+        Instanse = this;
+    }
+
+
 
     public Transform Finish;
     [SerializeField]
@@ -21,56 +28,94 @@ public class MobSpawn : MonoBehaviour
     private int MobSpawnLenght_;
     private bool startWolna = false;
     private bool End = false;
+    public float TimeSpawnSpeed;
+    public float RoundTime_;
+    
+    
+    private float TimeSpawnSpeed_2;
+    private int MobSpawnLenght_2;
+
+
+
+    [SerializeField] private GameObject Switchbutton;
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject BuildMode;
     [SerializeField] private GameObject PlayerCamera;
-    private void Update()
+    [SerializeField] private ShopScriptCoin22 shop;
+    [SerializeField] private GameObject panel;
+
+
+    private void Start()
     {
+       
+        button1.SetActive(true);
+        PlayerCamera.SetActive(false);
+        BuildMode.SetActive(true);
+
+    }
+    public void Switcher()
+    {
+        BuildMode.SetActive(!BuildMode.activeSelf);
+        PlayerCamera.SetActive(!PlayerCamera.activeSelf);
+        button1.SetActive(!button1.activeSelf);
+    }
+    private void Update()
+
+    {
+
         if (start)
         {
             
+            
+            
             if (End == false)
             {
-                button1.SetActive(false);
-                PlayerCamera.SetActive(true);
-                BuildMode.SetActive(false);
                 StartSpawnMob -= Time.deltaTime;
+
                 if (StartSpawnMob < 0)
                 {
                     MobWolna mobWolna = mobWolnas[Id];
-
                     if (startWolna == false)
                     {
                         TimeSpawnSpeed_ = mobWolna.TimeSpawnSpeed;
+                        TimeSpawnSpeed_2 = mobWolna.TimeSpawnSpeed2;
                         startWolna = true;
                     }
                     else
                     {
                         TimeSpawnSpeed_ -= Time.deltaTime;
+                        TimeSpawnSpeed_2 -= Time.deltaTime;
+
+
                         if (TimeSpawnSpeed_ < 0)
                         {
                             prefabsInGame.Add(Instantiate(mobWolna.prefab, transform.position, Quaternion.identity));
+                            prefabsInGame.Add(Instantiate(mobWolna.prefab2, transform.position, Quaternion.identity));
                             MobSpawnLenght_++;
+                            
 
                             if (MobSpawnLenght_ == mobWolna.MobSpawnLenght)
                             {
                                 MobSpawnLenght_ = 0;
+                                MobSpawnLenght_2 = 0;
                                 Id++;
-                                
 
                                 if (Id > mobWolnas.Count - 1)
                                 {
                                     End = true;
-                                    
+                                   
                                 }
                                 else
                                 {
                                     
                                     start = false;
+                                    shop.coinsForGame += mobWolna.coins22;
                                 }
-
+                               
+                                
                             }
-                            
+                         
+                           
 
                             startWolna = false;
                         }
@@ -78,15 +123,24 @@ public class MobSpawn : MonoBehaviour
 
                 }
             }
-           
+            else
+            {
+                panel.SetActive(true);
+                shop.coins += 700;
+                SceneManager.LoadScene(2);
+            }
+
         }
 
     }
-  
 
 
+    public void SamoRemove(GameObject gameObjects)
+    {
+        prefabsInGame.Remove(gameObjects);
+    }
 
-   
+
 
     private List<GameObject> prefabsInGame = new List<GameObject>();
 
@@ -106,7 +160,10 @@ public class MobWolna
     public GameObject prefab;
     public int MobSpawnLenght;
     public float TimeSpawnSpeed;
-
+    public GameObject prefab2;
+    public int MobSpawnLenght2;
+    public float TimeSpawnSpeed2;
+    public int coins22;
 }
 
 

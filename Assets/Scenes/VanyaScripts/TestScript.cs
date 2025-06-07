@@ -20,13 +20,15 @@ public class TestScript : MonoBehaviour
     [SerializeField] public Text text;
     [SerializeField] private int Limit;
     [SerializeField] private int HWM;
-
-
+   
     private void Start()
     {
         shop.coinsForGame = 100000;
         Limit = 15;
+       
+
     }
+   
 
     private void Update()
     {
