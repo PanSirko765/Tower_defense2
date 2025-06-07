@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ShopScriptCoin22 : MonoBehaviour
 {
-    public int coins;
-    public int coinsForGame;
+    public float coins;
+    public float coinsForGame;
 
     public static ShopScriptCoin22 instance;
 

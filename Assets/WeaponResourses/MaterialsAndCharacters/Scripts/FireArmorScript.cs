@@ -63,7 +63,7 @@ public class FireArmrorScript : MonoBehaviour
     {
         if(ShopScriptCoin22.instance.coins >= armor.updateCost)
         {
-           
+            ShopScriptCoin22.instance.coins -= armor.updateCost;
             armor.hpPlus *= 1.2f;
             Math.Round(armor.hpPlus);
             PlayerPrefs.SetFloat("hpIceArmor", armor.hpPlus);
@@ -82,45 +82,65 @@ public class FireArmrorScript : MonoBehaviour
         {
             if (armor.levelSuper == 1)
             {
-                armor.levelSuper = 2;
-                PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 7f;
-                PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 750;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                if(ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    armor.levelSuper = 2;
+                    PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
+                    armor.fireEmpyty = 7f;
+                    PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 750;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                }
+               
             }
             else if (armor.levelSuper == 2)
             {
-                armor.levelSuper = 3;
-                PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 9f;
-                PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 1000;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    armor.levelSuper = 3;
+                    PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
+                    armor.fireEmpyty = 9f;
+                    PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 1000;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                }
+                    
             }
             else if (armor.levelSuper == 3)
             {
-                armor.levelSuper = 4;
-                PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 10f;
-                PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 2000;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    armor.levelSuper = 4;
+                    PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
+                    armor.fireEmpyty = 10f;
+                    PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 2000;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIceArmor", armor.updateSuperCost);
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                }
+                    
             }
             else
             {
-                armor.levelSuper = 5;
-                PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
-                armor.fireEmpyty = 15f;
-                PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
-                LevelText.text = armor.levelSuper + "level";
-                OnLevel();
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    armor.levelSuper = 5;
+                    PlayerPrefs.SetInt("IceArmorLevelSuper", armor.levelSuper);
+                    armor.fireEmpyty = 15f;
+                    PlayerPrefs.SetFloat("IceArmorSlow", armor.fireEmpyty);
+                    LevelText.text = armor.levelSuper + "level";
+                    OnLevel();
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                }
+                    
 
             }
         }

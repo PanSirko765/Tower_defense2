@@ -35,7 +35,7 @@ public class SpeedSword : MonoBehaviour
         Have();
         OnLevel();
     }
-
+   
     public void Have()
     {
         if (select == 0)
@@ -46,9 +46,14 @@ public class SpeedSword : MonoBehaviour
 
     public void Buy()
     {
-        select = 1;
-        PlayerPrefs.SetInt("SelectSpeedSword", select);
-        buttonBuy.SetActive(false);
+        if(ShopScriptCoin22.instance.coins >= cost)
+        {
+            select = 1;
+            PlayerPrefs.SetInt("SelectSpeedSword", select);
+            buttonBuy.SetActive(false);
+            ShopScriptCoin22.instance.coins -= cost;
+        }
+       
     }
     public void OnLevel()
     {
@@ -67,21 +72,26 @@ public class SpeedSword : MonoBehaviour
     }
     public void Upgrade()
     {
-        damage *= 1.2f;
-        Math.Round(damage);
-        PlayerPrefs.SetFloat("DamageSpeedSword", damage);
-        updateCost *= 1.3f;
-        Math.Round(updateCost);
-        PlayerPrefs.SetFloat("SpeedSwordUpdateSword", updateCost);
-        text.text = damage + "дамагу";
-        update.text = "Прокачати за" + updateCost;
+        if(ShopScriptCoin22.instance.coins >= updateCost)
+        {
+            damage *= 1.2f;
+            Math.Round(damage);
+            PlayerPrefs.SetFloat("DamageSpeedSword", damage);
+            updateCost *= 1.3f;
+            Math.Round(updateCost);
+            PlayerPrefs.SetFloat("SpeedSwordUpdateSword", updateCost);
+            text.text = damage + "дамагу";
+            update.text = "Прокачати за" + updateCost;
+            ShopScriptCoin22.instance.coins -= updateCost;
+        }
+        
     }
 
     public void UpdradeSuper()
     {
         if (levelSuper < 5)
         {
-            if (levelSuper == 1)
+            if (levelSuper == 1 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 2;
                 PlayerPrefs.SetInt("SpeedSwordLevelSuper", levelSuper);
@@ -91,8 +101,9 @@ public class SpeedSword : MonoBehaviour
                 updateSuperCost = 1250;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostSpeedSword", updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else if (levelSuper == 2)
+            else if (levelSuper == 2 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 3;
                 PlayerPrefs.SetInt("SpeedSwordLevelSuper", levelSuper);
@@ -102,8 +113,9 @@ public class SpeedSword : MonoBehaviour
                 updateSuperCost = 1500;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostSpeedSword", updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else if (levelSuper == 3)
+            else if (levelSuper == 3 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 4;
                 PlayerPrefs.SetInt("SpeedSwordLevelSuper", levelSuper);
@@ -113,8 +125,9 @@ public class SpeedSword : MonoBehaviour
                 updateSuperCost = 2000;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostSpeedSword", updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else
+            else if(ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 5;
                 PlayerPrefs.SetInt("SpeedSwordLevelSuper", levelSuper);
@@ -122,6 +135,7 @@ public class SpeedSword : MonoBehaviour
                 PlayerPrefs.SetFloat("SpeedSwordHpReturn", speedBoost);
                 LevelText.text = levelSuper + "level";
                 OnLevel();
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
 
             }
         }

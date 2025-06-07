@@ -127,6 +127,7 @@ public class MobSpawn : MonoBehaviour
             {
                 panel.SetActive(true);
                 shop.coins += 700;
+                PlayerPrefs.SetFloat("coins", shop.coins);
                 SceneManager.LoadScene(2);
             }
 
