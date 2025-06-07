@@ -1,15 +1,19 @@
 using UnityEngine;
 
-public class ShopScriptCoin : MonoBehaviour
+public class ShopScriptCoin22 : MonoBehaviour
 {
-    public int coins;
-    public int coinsForGame;
+    public float coins;
+    public float coinsForGame;
 
-    public static ShopScriptCoin instance;
+    public static ShopScriptCoin22 instance;
 
-    private void Start()
+    private void Awake()
     {
+        
+        instance = this;
+        
         coins = PlayerPrefs.GetInt("coins", 0);
+        coins += 100000;
         coinsForGame = PlayerPrefs.GetInt("coinsForGame", 0);
     }
 

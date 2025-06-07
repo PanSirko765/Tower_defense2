@@ -19,4 +19,6 @@ public class GetDamageTower : MonoBehaviour
         _hp = hp;
 
     }
+
+    
 }

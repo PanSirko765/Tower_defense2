@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 5422673849883574576}
   m_Layer: 0
   m_Name: MiniTurret 1 1
-  m_TagString: Untagged
+  m_TagString: DeleteTheTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

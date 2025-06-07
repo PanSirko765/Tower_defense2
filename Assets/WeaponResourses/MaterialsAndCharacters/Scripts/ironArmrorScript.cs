@@ -47,20 +47,30 @@ public class ironArmrorScript : MonoBehaviour
     
     public void BuyThis()
     {
-        @object.SetActive(false);
-        armor.have = 1;
-        PlayerPrefs.SetInt("HaveIronArmor", armor.have);
+        if(ShopScriptCoin22.instance.coins >= 1000)
+        {
+            @object.SetActive(false);
+            armor.have = 1;
+            PlayerPrefs.SetInt("HaveIronArmor", armor.have);
+            ShopScriptCoin22.instance.coins -= 1000; 
+        }
+       
     }
     public void Upgrade()
     {
-        armor.hpPlus *= 1.2f;
-        Math.Round(armor.hpPlus);
-        PlayerPrefs.SetFloat("hpIronArmor", armor.hpPlus);
-        armor.updateCost *= 1.3f;
-        Math.Round(armor.updateCost);
-        PlayerPrefs.SetFloat("updateCostIronArmor", armor.updateCost);
-        text.text = "+" + armor.hpPlus + "hp";
-        update.text = "Прокачати за" + armor.updateCost;
+        if(ShopScriptCoin22.instance.coins >= armor.updateCost)
+        {
+            ShopScriptCoin22.instance.coins -= armor.updateCost;
+            armor.hpPlus *= 1.2f;
+            Math.Round(armor.hpPlus);
+            PlayerPrefs.SetFloat("hpIronArmor", armor.hpPlus);
+            armor.updateCost *= 1.3f;
+            Math.Round(armor.updateCost);
+            PlayerPrefs.SetFloat("updateCostIronArmor", armor.updateCost);
+            text.text = "+" + armor.hpPlus + "hp";
+            update.text = "Прокачати за" + armor.updateCost;
+        }
+        
     }
     public void Select()
     {
@@ -72,45 +82,65 @@ public class ironArmrorScript : MonoBehaviour
         {
             if(armor.levelSuper == 1)
             {
-                armor.levelSuper = 2;
-                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.2f;
-                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 750;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                if(ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                    armor.levelSuper = 2;
+                    PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                    armor.slow = 0.2f;
+                    PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 750;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                }
+                
             }
             else if(armor.levelSuper == 2)
             {
-                armor.levelSuper = 3;
-                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.15f;
-                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 1250;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                    armor.levelSuper = 3;
+                    PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                    armor.slow = 0.15f;
+                    PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 1250;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                }
+               
             }
             else if( armor.levelSuper == 3)
             {
-                armor.levelSuper = 4;
-                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.1f;
-                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
-                LevelText.text = armor.levelSuper + "level";
-                armor.updateSuperCost = 1500;
-                textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
-                PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                    armor.levelSuper = 4;
+                    PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                    armor.slow = 0.1f;
+                    PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                    LevelText.text = armor.levelSuper + "level";
+                    armor.updateSuperCost = 1500;
+                    textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
+                    PlayerPrefs.SetFloat("SupCostIronArmor", armor.updateSuperCost);
+                }
+                    
             }
             else
             {
-                armor.levelSuper = 5;
-                PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
-                armor.slow = 0.05f;
-                PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
-                LevelText.text = armor.levelSuper + "level";
-                OnLevel();
+                if (ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
+                {
+                    ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
+                    armor.levelSuper = 5;
+                    PlayerPrefs.SetInt("IronArmorLevelSuper", armor.levelSuper);
+                    armor.slow = 0.05f;
+                    PlayerPrefs.SetFloat("IronArmorSlow", armor.slow);
+                    LevelText.text = armor.levelSuper + "level";
+                    OnLevel();
+                }
+                    
                 
             }
         }

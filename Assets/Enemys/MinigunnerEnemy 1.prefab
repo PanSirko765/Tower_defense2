@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2501476572025532592}
   - component: {fileID: 3479746664762059460}
   - component: {fileID: 3417723439222393521}
+  - component: {fileID: -5350109343050797810}
   m_Layer: 0
   m_Name: MinigunnerEnemy 1
   m_TagString: New tag
@@ -64,6 +65,18 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-5350109343050797810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499311039436224252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acbd7cd006b9e44282f188b2716bc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &566021853887401190
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,17 @@ public class BulletS : MonoBehaviour
 {
     public Rigidbody rb;
     private float Damage = 1;
+    
+    
+
+    
+
 
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 
     public void SetTower(TowerScript towerSkript)
