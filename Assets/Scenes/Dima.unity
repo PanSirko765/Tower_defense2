@@ -248,12 +248,25 @@ MonoBehaviour:
   - prefab: {fileID: 1433758226263661122, guid: 1322049eef2133a4a943c3471e526346, type: 3}
     MobSpawnLenght: 5
     TimeSpawnSpeed: 1
+    prefab2: {fileID: 0}
+    MobSpawnLenght2: 0
+    TimeSpawnSpeed2: 0
+    coins22: 0
   - prefab: {fileID: 1433758226263661122, guid: 1322049eef2133a4a943c3471e526346, type: 3}
     MobSpawnLenght: 5
     TimeSpawnSpeed: 5
+    prefab2: {fileID: 0}
+    MobSpawnLenght2: 0
+    TimeSpawnSpeed2: 0
+    coins22: 0
+  TimeSpawnSpeed: 0
+  RoundTime_: 0
+  Switchbutton: {fileID: 0}
   button1: {fileID: 1515144325}
   BuildMode: {fileID: 211112582}
   PlayerCamera: {fileID: 552048976}
+  shop: {fileID: 0}
+  panel: {fileID: 0}
   button: {fileID: 503845005}
 --- !u!1 &148249856
 GameObject:
