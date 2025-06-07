@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 3071868150563210826}
   - component: {fileID: 661891185664603819}
   - component: {fileID: 7547530851371935321}
+  - component: {fileID: -1069583359469192777}
   m_Layer: 0
   m_Name: SwordEnemy (1)
   m_TagString: New tag
@@ -174,6 +175,18 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1069583359469192777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433758226263661122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acbd7cd006b9e44282f188b2716bc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949475992859773403
 GameObject:
   m_ObjectHideFlags: 0

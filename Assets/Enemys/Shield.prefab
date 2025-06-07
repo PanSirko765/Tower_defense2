@@ -1651,6 +1651,7 @@ GameObject:
   - component: {fileID: 74116371226835430}
   - component: {fileID: 5131344533910524115}
   - component: {fileID: 1755911401557168633}
+  - component: {fileID: 9175221508392306555}
   m_Layer: 0
   m_Name: Shield
   m_TagString: New tag
@@ -1704,6 +1705,18 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9175221508392306555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899636570851322246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acbd7cd006b9e44282f188b2716bc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7084652189100974038
 GameObject:
   m_ObjectHideFlags: 0
