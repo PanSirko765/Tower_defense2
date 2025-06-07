@@ -55,27 +55,36 @@ public class IceArmrorScript : MonoBehaviour
     }  
     public void BuyThis()
     {
-        @object.SetActive(false);
-        armor.have = 1;
-        PlayerPrefs.SetInt("HaveFireArmor", armor.have);
+        if(ShopScriptCoin22.instance.coins >= armor.cost)
+        {
+            @object.SetActive(false);
+            armor.have = 1;
+            PlayerPrefs.SetInt("HaveFireArmor", armor.have);
+            ShopScriptCoin22.instance.coins =- armor.cost;
+        }
+        
     }
     public void Upgrade()
     {
-        armor.hpPlus *= 1.2f;
-        Math.Round(armor.hpPlus);
-        PlayerPrefs.SetFloat("hpFireArmor", armor.hpPlus);
-        armor.updateCost *= 1.3f;
-        Math.Round(armor.updateCost);
-        PlayerPrefs.SetFloat("updateCostFireArmor", armor.updateCost);
-        text.text = "+" + armor.hpPlus + "hp";
-        update.text = "Прокачати за" + armor.updateCost;
+        if(ShopScriptCoin22.instance.coins >= armor.updateCost)
+        {
+            armor.hpPlus *= 1.2f;
+            Math.Round(armor.hpPlus);
+            PlayerPrefs.SetFloat("hpFireArmor", armor.hpPlus);
+            armor.updateCost *= 1.3f;
+            Math.Round(armor.updateCost);
+            PlayerPrefs.SetFloat("updateCostFireArmor", armor.updateCost);
+            text.text = "+" + armor.hpPlus + "hp";
+            update.text = "Прокачати за" + armor.updateCost;
+        }
+        
     }
     
     public void UpdradeSuper()
     {
         if (armor.levelSuper < 5)
         {
-            if (armor.levelSuper == 1)
+            if (armor.levelSuper == 1 && ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
             {
                 armor.levelSuper = 2;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
@@ -85,8 +94,9 @@ public class IceArmrorScript : MonoBehaviour
                 armor.updateSuperCost = 1000;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
+                ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
             }
-            else if (armor.levelSuper == 2)
+            else if (armor.levelSuper == 2 && ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
             {
                 armor.levelSuper = 3;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
@@ -96,8 +106,9 @@ public class IceArmrorScript : MonoBehaviour
                 armor.updateSuperCost = 1750;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
+                ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
             }
-            else if (armor.levelSuper == 3)
+            else if (armor.levelSuper == 3 && ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
             {
                 armor.levelSuper = 4;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
@@ -107,8 +118,9 @@ public class IceArmrorScript : MonoBehaviour
                 armor.updateSuperCost = 2150;
                 textcostupdate.text = "Прокачати за " + armor.updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostFireArmor", armor.updateSuperCost);
+                ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
             }
-            else
+            else if(ShopScriptCoin22.instance.coins >= armor.updateSuperCost)
             {
                 armor.levelSuper = 5;
                 PlayerPrefs.SetInt("FireArmorLevelSuper", armor.levelSuper);
@@ -116,7 +128,7 @@ public class IceArmrorScript : MonoBehaviour
                 PlayerPrefs.SetFloat("FireArmorSlow", armor.slowEmpyty);
                 LevelText.text = armor.levelSuper + "level";
                 OnLevel();
-
+                ShopScriptCoin22.instance.coins -= armor.updateSuperCost;
             }
         }
     }

@@ -52,21 +52,26 @@ public class CiommonSwordScript : MonoBehaviour
     }
     public void Upgrade()
     {
-        damage *= 1.2f;
-        Math.Round(damage);
-        PlayerPrefs.SetFloat("DamageCommonSword", damage);
-        updateCost *= 1.3f;
-        Math.Round(updateCost);
-        PlayerPrefs.SetFloat("CommonSwordUpdateSword", updateCost);
-        text.text =  damage + "дамагу";
-        update.text = "Прокачати за" + updateCost;
+        if(ShopScriptCoin22.instance.coins >= updateSuperCost)
+        {
+            damage *= 1.2f;
+            Math.Round(damage);
+            PlayerPrefs.SetFloat("DamageCommonSword", damage);
+            updateCost *= 1.3f;
+            Math.Round(updateCost);
+            PlayerPrefs.SetFloat("CommonSwordUpdateSword", updateCost);
+            text.text = damage + "дамагу";
+            update.text = "Прокачати за" + updateCost;
+            ShopScriptCoin22.instance.coins -= updateSuperCost;
+        }
+        
     }
 
     public void UpdradeSuper()
     {
         if (levelSuper < 5)
         {
-            if (levelSuper == 1)
+            if (levelSuper == 1 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 2;
                 PlayerPrefs.SetInt("CommonSwordLevelSuper", levelSuper);
@@ -76,8 +81,9 @@ public class CiommonSwordScript : MonoBehaviour
                 updateSuperCost = 750;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostCommonSword", updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else if (levelSuper == 2)
+            else if (levelSuper == 2 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 3;
                 PlayerPrefs.SetInt("CommonSwordLevelSuper", levelSuper);
@@ -87,8 +93,9 @@ public class CiommonSwordScript : MonoBehaviour
                 updateSuperCost = 1250;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostCommonSword",     updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else if (levelSuper == 3)
+            else if (levelSuper == 3 && ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 4;
                 PlayerPrefs.SetInt("CommonSwordLevelSuper", levelSuper);
@@ -98,8 +105,9 @@ public class CiommonSwordScript : MonoBehaviour
                 updateSuperCost = 2000;
                 textcostupdate.text = "Прокачати за " + updateSuperCost;
                 PlayerPrefs.SetFloat("SupCostCommonSword", updateSuperCost);
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
             }
-            else
+            else if(ShopScriptCoin22.instance.coins >= updateSuperCost)
             {
                 levelSuper = 5;
                 PlayerPrefs.SetInt("CommonSwordLevelSuper", levelSuper);
@@ -107,6 +115,7 @@ public class CiommonSwordScript : MonoBehaviour
                 PlayerPrefs.SetFloat("CommonSwordBoostLoot", boostLoot);
                 LevelText.text = levelSuper + "level";
                 OnLevel();
+                ShopScriptCoin22.instance.coins -= updateSuperCost;
 
             }
         }
