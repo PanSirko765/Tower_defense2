@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DJScriptSelect : MonoBehaviour
+public class FanSelect : MonoBehaviour
 {
     public GameObject canon;
     public GameObject DJ;
@@ -17,8 +17,8 @@ public class DJScriptSelect : MonoBehaviour
 
     private void Start()
     {
-        _select = PlayerPrefs.GetInt("SelectDJTower", 0);
-        _have = PlayerPrefs.GetInt("HaveDJTower", 0);
+        _select = PlayerPrefs.GetInt("SelectFanTower", 0);
+        _have = PlayerPrefs.GetInt("HaveFanTower", 0);
 
         if (_have == 0)
         {
@@ -30,42 +30,25 @@ public class DJScriptSelect : MonoBehaviour
 
     }
 
-    public void Buy() 
-    {
-        if (ShopScriptCoin22.instance == null) {
-            Debug.Log("Hello World");
-        
-        }
-        if (ShopScriptCoin22.instance.coins >= 950)
-        { 
-            ShopScriptCoin22.instance.coins -= 950; 
-            _have = 1; 
-            PlayerPrefs.SetInt("HaveDJTower", 1); 
-            buy.SetActive(false); 
-        
-        } 
-    
-    
-    
-    }
+    public void Buy() { if (ShopScriptCoin22.instance.coins >= 400) { ShopScriptCoin22.instance.coins -= 400; _have = 1; PlayerPrefs.SetInt("HaveShokerTower", 1); buy.SetActive(false); } }
 
     void OnMouseDown()
     {
         canon.SetActive(false);
-        DJ.SetActive(true);
+        DJ.SetActive(false);
         Minigun.SetActive(false);
         MIni.SetActive(false);
         Normal.SetActive(false);
         Rokcet.SetActive(false);
         Shoker.SetActive(false);
-        Fan.SetActive(false);
+        Fan.SetActive(true);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            DJ.SetActive(false);
+            Fan.SetActive(false);
         }
     }
 
@@ -74,7 +57,7 @@ public class DJScriptSelect : MonoBehaviour
         if (SelectTowers.selectItems < 4)
         {
             _select = 1;
-            PlayerPrefs.SetInt("SelectDJTower", _select);
+            PlayerPrefs.SetInt("SelectFanTower", _select);
             SelectTowers.selectItems++;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
@@ -85,7 +68,7 @@ public class DJScriptSelect : MonoBehaviour
         if (_select == 1)
         {
             _select = 0;
-            PlayerPrefs.SetInt("SelectDJTower", _select);
+            PlayerPrefs.SetInt("SelectFanTower", _select);
             SelectTowers.selectItems++;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
