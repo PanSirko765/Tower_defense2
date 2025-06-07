@@ -23,8 +23,8 @@ public class TestScript : MonoBehaviour
    
     private void Start()
     {
-        shop.coinsForGame = 100000;
-        Limit = 15;
+        shop.coinsForGame = 10000;
+        Limit = 20;
        
 
     }
@@ -51,7 +51,7 @@ public class TestScript : MonoBehaviour
                    }
                    else
                    {
-                    Debug.Log("Erorr:Towers limit is Reached!You can only place 15 towers !");
+                    Debug.Log("Erorr:Towers limit is Reached!You can only place 20 towers !");
                    }
                  }
                  else
