@@ -69,7 +69,7 @@ public class RocketTower : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectRocketTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

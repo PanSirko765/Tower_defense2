@@ -69,7 +69,7 @@ public class FanSelect : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectFanTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

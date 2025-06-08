@@ -69,7 +69,7 @@ public class ShokerTower : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectShokerTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

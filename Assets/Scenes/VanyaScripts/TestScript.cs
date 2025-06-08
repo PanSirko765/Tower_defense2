@@ -48,43 +48,43 @@ public class TestScript : MonoBehaviour
     {
         shop.coinsForGame = 100000000;
         Limit = 20;
-        _selectMoini = PlayerPrefs.GetInt("SelectMiniTower", 0);
+        _selectMoini = PlayerPrefs.GetInt("SelectMiniTower");
         if(_selectMoini == 0)
         {
             _miniturret.SetActive(false);
         }
 
-        _selectDiJi = PlayerPrefs.GetInt("SelectDJTower", 0);
+        _selectDiJi = PlayerPrefs.GetInt("SelectDJTower");
         if (_selectDiJi == 0)
         {
             DiJi.SetActive(false);
         }
         
-        _selectMiniGang = PlayerPrefs.GetInt("SelectMinigunTower", 0);
+        _selectMiniGang = PlayerPrefs.GetInt("SelectMinigunTower");
         if (_selectMiniGang == 0)
         {
             MiniGang.SetActive(false);
         }
 
-        _selectShokTow = PlayerPrefs.GetInt("SelectShokerTower", 0);
+        _selectShokTow = PlayerPrefs.GetInt("SelectShokerTower");
         if (_selectShokTow == 0)
         {
             NormalTow.SetActive(false);
         }
 
-        _selectCononi = PlayerPrefs.GetInt("SelectNormalTower", 0);
+        _selectCononi = PlayerPrefs.GetInt("SelectCanonTower");
         if (_selectCononi == 0)
         {
             Cononi.SetActive(false);
         }
 
-        _selectRockTow = PlayerPrefs.GetInt("SelectRocketTower", 0);
+        _selectRockTow = PlayerPrefs.GetInt("SelectRocketTower");
         if (_selectRockTow == 0)
         {
             RockTow.SetActive(false);
         }
 
-        _selectFanTow = PlayerPrefs.GetInt("SelectFanTower", 0);
+        _selectFanTow = PlayerPrefs.GetInt("SelectFanTower");
         if (_selectFanTow == 0)
         {
             FanTow.SetActive(false);

@@ -55,7 +55,7 @@ public class CanonTowerScript : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectCanonTower", _select);
-            SelectTowers.instance.selectItems++;
+            SelectTowers.instance.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

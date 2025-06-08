@@ -69,7 +69,7 @@ public class NormalTowerScript : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectNormalTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }
