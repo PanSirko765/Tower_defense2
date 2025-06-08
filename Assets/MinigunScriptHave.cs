@@ -69,7 +69,7 @@ public class MinigunScriptHave : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectMinigunTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

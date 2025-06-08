@@ -86,7 +86,7 @@ public class DJScriptSelect : MonoBehaviour
         {
             _select = 0;
             PlayerPrefs.SetInt("SelectDJTower", _select);
-            SelectTowers.selectItems++;
+            SelectTowers.selectItems--;
             PlayerPrefs.SetInt("Item", SelectTowers.selectItems);
         }
     }

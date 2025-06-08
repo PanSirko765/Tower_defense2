@@ -37,7 +37,7 @@ public class MobSpawn : MonoBehaviour
 
 
 
-    [SerializeField] private GameObject Switchbutton;
+    
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject BuildMode;
     [SerializeField] private GameObject PlayerCamera;
@@ -53,12 +53,7 @@ public class MobSpawn : MonoBehaviour
         BuildMode.SetActive(true);
 
     }
-    public void Switcher()
-    {
-        BuildMode.SetActive(!BuildMode.activeSelf);
-        PlayerCamera.SetActive(!PlayerCamera.activeSelf);
-        button1.SetActive(!button1.activeSelf);
-    }
+    
     private void Update()
 
     {
