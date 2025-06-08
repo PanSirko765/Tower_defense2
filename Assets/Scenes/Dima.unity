@@ -3155,6 +3155,20 @@ MonoBehaviour:
   HWM: 0
   _miniturret: {fileID: 160271927}
   _selectMoini: 0
+  DiJi: {fileID: 588757589}
+  _selectDiJi: 0
+  MiniGang: {fileID: 1007920400}
+  _selectMiniGang: 0
+  NormalTow: {fileID: 756500361}
+  _selectNormalTow: 0
+  Cononi: {fileID: 1515144325}
+  _selectCononi: 0
+  RockTow: {fileID: 1434898492}
+  _selectRockTow: 0
+  ShokTow: {fileID: 484896538}
+  _selectShokTow: 0
+  FanTow: {fileID: 555535266}
+  _selectFanTow: 0
 --- !u!1 &1434898492
 GameObject:
   m_ObjectHideFlags: 0
