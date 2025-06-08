@@ -24,7 +24,26 @@ public class TestScript : MonoBehaviour
     [SerializeField] private GameObject _miniturret;
     [SerializeField] private int _selectMoini;
 
-   
+    [SerializeField] private GameObject DiJi;
+    [SerializeField] private int _selectDiJi;
+
+    [SerializeField] private GameObject MiniGang;
+    [SerializeField] private int _selectMiniGang;
+
+    [SerializeField] private GameObject NormalTow;
+    [SerializeField] private int _selectNormalTow;
+
+    [SerializeField] private GameObject Cononi;
+    [SerializeField] private int _selectCononi;
+
+    [SerializeField] private GameObject RockTow;
+    [SerializeField] private int _selectRockTow;
+
+    [SerializeField] private GameObject ShokTow;
+    [SerializeField] private int _selectShokTow;
+
+    [SerializeField] private GameObject FanTow;
+    [SerializeField] private int _selectFanTow;
     private void Start()
     {
         shop.coinsForGame = 100000000;
@@ -34,7 +53,43 @@ public class TestScript : MonoBehaviour
         {
             _miniturret.SetActive(false);
         }
-       
+
+        _selectDiJi = PlayerPrefs.GetInt("SelectDJTower", 0);
+        if (_selectDiJi == 0)
+        {
+            DiJi.SetActive(false);
+        }
+        
+        _selectMiniGang = PlayerPrefs.GetInt("SelectMinigunTower", 0);
+        if (_selectMiniGang == 0)
+        {
+            MiniGang.SetActive(false);
+        }
+
+        _selectShokTow = PlayerPrefs.GetInt("SelectShokerTower", 0);
+        if (_selectShokTow == 0)
+        {
+            NormalTow.SetActive(false);
+        }
+
+        _selectCononi = PlayerPrefs.GetInt("SelectNormalTower", 0);
+        if (_selectCononi == 0)
+        {
+            Cononi.SetActive(false);
+        }
+
+        _selectRockTow = PlayerPrefs.GetInt("SelectRocketTower", 0);
+        if (_selectRockTow == 0)
+        {
+            RockTow.SetActive(false);
+        }
+
+        _selectFanTow = PlayerPrefs.GetInt("SelectFanTower", 0);
+        if (_selectFanTow == 0)
+        {
+            FanTow.SetActive(false);
+        }
+
 
     }
    
