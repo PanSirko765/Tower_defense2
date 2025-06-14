@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
-using UnityEditor.Rendering.PostProcessing;
+
 using UnityEngine.Rendering.PostProcessing;
-using Unity.VisualScripting;
+
 
 
 public class SettingsScriipt : MonoBehaviour
